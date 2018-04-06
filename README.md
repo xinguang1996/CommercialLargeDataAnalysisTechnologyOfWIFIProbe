@@ -1,0 +1,2 @@
+# CommercialLargeDataAnalysisTechnologyOfWIFIProbe
+第六届“中国软件杯”大学生软件设计大赛赛题：A2基于WIFI探针的商业大数据分析技术，获得二等奖及最佳表现奖
