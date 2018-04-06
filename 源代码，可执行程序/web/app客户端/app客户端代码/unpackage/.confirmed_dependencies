@@ -1,0 +1,679 @@
+{
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "img/3.png",
+      "img/2.png",
+      "img/1.png",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "img/wechat_chaxun.png",
+      "img/wechat_kongzhi.png",
+      "img/sms_chaxun.png",
+      "img/app.png",
+      "img/kaiguanji.png",
+      "img/zhuce.png",
+      "img/shebei.png",
+      "img/keliu.png"
+    ],
+    "refer": [
+      "guide/guide.html",
+      "setup/boot_and_shutdown.html",
+      "main/recent_data.html",
+      "data_show/data_show_hour.html",
+      "map/map.html",
+      "system_status/system_status.html",
+      "user/add_user.html"
+    ]
+  },
+  "guide/guide.html": {
+    "resources": [
+      "img/3.png",
+      "img/2.png",
+      "img/1.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/wechat_chaxun.png",
+      "img/wechat_kongzhi.png",
+      "img/sms_chaxun.png",
+      "img/app.png",
+      "img/4.png"
+    ],
+    "refer": []
+  },
+  "setup/boot_and_shutdown.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/1.png",
+      "setup/boot_and_shutdown.html",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "index.html",
+      "login/login.html",
+      "main/recent_data.html",
+      "data_show/data_show_day.html",
+      "data_show/data_show_week.html",
+      "data_show/data_show_hour.html",
+      "data_show/data_show_month.html",
+      "reset_info/reset_info_main.html"
+    ]
+  },
+  "login/login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/my_ip.js"
+    ],
+    "refer": [
+      "index.html",
+      "login/forget_password.html",
+      "data_show/data_show_hour.html",
+      "main/recent_data.html"
+    ]
+  },
+  "login/forget_password.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "index.html",
+      "login/login.html"
+    ]
+  },
+  "main/recent_data.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "main/css/dataTables.bootstrap.min.css",
+      "main/js/bootstrap.min.js",
+      "main/css/bootstrap.min.css",
+      "main/js/dataTables.bootstrap.min.js",
+      "main/js/jquery.dataTables.min.js",
+      "main/js/jquery.min.js",
+      "css/table_style.css",
+      "main/js/get_recent_data.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "index.html",
+      "data_show/data_show_hour.html",
+      "data_show/data_show_day.html",
+      "login/login.html",
+      "data_show/data_show_week.html",
+      "data_show/data_show_month.html",
+      "setup/boot_and_shutdown.html",
+      "reset_info/reset_info_main.html",
+      "system_status/system_status.html"
+    ]
+  },
+  "data_show/data_show_hour.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "data_show/js/data_show_hour.js",
+      "data_show/js/echarts.min.js",
+      "data_show/js/echarts.common.min.js",
+      "js/my_ip.js",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_hour.html",
+      "data_show/js/data_show_pages.js"
+    ],
+    "refer": [
+      "login/login.html",
+      "setup/boot_and_shutdown.html",
+      "main/recent_data.html",
+      "data_show/data_show_day.html",
+      "data_show/data_show_week.html",
+      "index.html",
+      "data_show/deep_rate_and_bounce_rate_hour.html",
+      "data_show/the_new_and_old_customers_hour.html",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_hour.html"
+    ]
+  },
+  "data_show/data_show_day.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_day.js",
+      "data_show/data_show1.html",
+      "data_show/js/data_show_pages.js",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_day.html"
+    ],
+    "refer": [
+      "data_show/data_show_week.html",
+      "index.html",
+      "data_show/data_show_hour.html",
+      "data_show/data_show_month.html",
+      "data_show/data_show2.html",
+      "data_show/data_show3.html",
+      "data_show/data_show1.html",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_day.html",
+      "data_show/the_new_and_old_customers_day.html",
+      "data_show/the_resident_time_day.html",
+      "data_show/deep_rate_and_bounce_rate_day.html"
+    ]
+  },
+  "data_show/data_show_week.html": {
+    "resources": [
+      "data_show/js/data_show_week.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "js/my_ip.js",
+      "data_show/js/data_show_pages.js",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_week.html"
+    ],
+    "refer": [
+      "data_show/data_show_month.html",
+      "data_show/data_show_day.html",
+      "index.html",
+      "data_show/customer_active_week.html",
+      "data_show/deep_rate_and_bounce_rate_week.html",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_week.html",
+      "data_show/the_resident_time_week.html",
+      "data_show/visiting_cycle_week.html",
+      "data_show/the_new_and_old_customers_week.html"
+    ]
+  },
+  "data_show/data_show_month.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_month.js",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_month.html",
+      "data_show/js/data_show_pages.js"
+    ],
+    "refer": [
+      "setup/boot_and_shutdown.html",
+      "data_show/data_show_week.html",
+      "data_show/the_new_and_old_customers_month.html",
+      "data_show/the_resident_time_month.html",
+      "data_show/deep_rate_and_bounce_rate_month.html",
+      "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_month.html",
+      "data_show/customer_active_month.html",
+      "data_show/visiting_cycle_month.html"
+    ]
+  },
+  "data_show/data_show1.html": {
+    "resources": [
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_day.js",
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css"
+    ],
+    "refer": [
+      "data_show/data_show_hour.html",
+      "data_show/data_show_week.html",
+      "index.html",
+      "setup/boot_and_shutdown.html"
+    ]
+  },
+  "data_show/data_show2.html": {
+    "resources": [
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_day.js"
+    ],
+    "refer": [
+      "index.html"
+    ]
+  },
+  "data_show/data_show3.html": {
+    "resources": [
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_day.js"
+    ],
+    "refer": []
+  },
+  "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_day.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "fonts/mui.ttf",
+      "data_show/js/data_show_day.js",
+      "js/my_ip.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "index.html",
+      "setup/boot_and_shutdown.html",
+      "login/login.html"
+    ]
+  },
+  "data_show/the_new_and_old_customers_day.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "data_show/js/data_show_day.js",
+      "js/my_ip.js",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_hour.html",
+      "data_show/data_show_week.html",
+      "system_status/system_status.html"
+    ]
+  },
+  "data_show/the_resident_time_day.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "data_show/js/data_show_day.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_hour.html": {
+    "resources": [
+      "data_show/js/data_show_hour.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_week.html",
+      "setup/boot_and_shutdown.html",
+      "data_show/data_show_day.html",
+      "index.html",
+      "data_show/data_show_month.html"
+    ]
+  },
+  "data_show/the_new_and_old_customers_hour.html": {
+    "refer": [
+      "data_show/data_show_week.html",
+      "data_show/data_show_day.html",
+      "login/login.html"
+    ],
+    "resources": [
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css",
+      "data_show/js/data_show_hour.js",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/my_ip.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ]
+  },
+  "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_week.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "data_show/js/data_show_week.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_month.html"
+    ]
+  },
+  "data_show/the_new_and_old_customers_week.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "data_show/js/data_show_week.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_month.html"
+    ]
+  },
+  "data_show/the_resident_time_week.html": {
+    "resources": [
+      "data_show/js/data_show_week.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/my_ip.js",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_day.html"
+    ]
+  },
+  "data_show/deep_rate_and_bounce_rate_week.html": {
+    "refer": [
+      "data_show/data_show_month.html"
+    ],
+    "resources": [
+      "data_show/js/data_show_week.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ]
+  },
+  "data_show/the_resident_time_month.html": {
+    "resources": [
+      "data_show/js/data_show_month.js",
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "data_show/deep_rate_and_bounce_rate_hour.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/js/data_show_hour.js",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/my_ip.js",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "login/login.html",
+      "data_show/data_show_day.html",
+      "index.html",
+      "data_show/data_show_month.html",
+      "data_show/data_show_week.html"
+    ]
+  },
+  "data_show/deep_rate_and_bounce_rate_day.html": {
+    "resources": [
+      "data_show/js/data_show_day.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "fonts/mui.ttf",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_week.html",
+      "data_show/data_show_month.html",
+      "index.html"
+    ]
+  },
+  "data_show/visiting_cycle_month.html": {
+    "resources": [
+      "data_show/js/data_show_month.js",
+      "fonts/mui.ttf",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/my_ip.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "data_show/the_new_and_old_customers_month.html": {
+    "resources": [
+      "data_show/js/data_show_month.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "fonts/mui.ttf",
+      "js/my_ip.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "data_show/customer_active_month.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/js/data_show_month.js",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/my_ip.js",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "img/img.jpg",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "data_show/traffic_amount_and_the_amount_of_store_and_into_the_store_rate_month.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "data_show/js/data_show_month.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "setup/boot_and_shutdown.html",
+      "system_status/system_status.html"
+    ]
+  },
+  "data_show/deep_rate_and_bounce_rate_month.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/js/data_show_month.js",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "data_show/customer_active_week.html": {
+    "resources": [
+      "data_show/js/data_show_week.js",
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "data_show/data_show_month.html",
+      "login/login.html",
+      "index.html"
+    ]
+  },
+  "data_show/visiting_cycle_week.html": {
+    "resources": [
+      "data_show/css/data_show_style.css",
+      "data_show/img/next.png",
+      "data_show/img/pre.png",
+      "data_show/js/data_show_week.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "data_show/js/echarts.min.js",
+      "css/mui.min.css",
+      "data_show/js/data_show_pages.js",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "reset_info/reset_info_main.html": {
+    "resources": [
+      "css/table_style.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/my_ip.js",
+      "img/img.jpg"
+    ],
+    "refer": [
+      "reset_info/reset_password.html",
+      "reset_info/reset_info.html"
+    ]
+  },
+  "reset_info/reset_password.html": {
+    "resources": [
+      "css/table_style.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/my_ip.js",
+      "img/img.jpg",
+      "reset_info/js/reset_password.js"
+    ],
+    "refer": [
+      "index.html"
+    ]
+  },
+  "reset_info/reset_info.html": {
+    "resources": [
+      "css/table_style.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/my_ip.js",
+      "reset_info/js/reset_info.js",
+      "img/img.jpg"
+    ],
+    "refer": []
+  },
+  "system_status/system_status.html": {
+    "resources": [
+      "css/table_style.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/my_ip.js",
+      "img/img.jpg",
+      "system_status/js/system_status.js"
+    ],
+    "refer": [
+      "setup/boot_and_shutdown.html",
+      "login/login.html",
+      "index.html"
+    ]
+  },
+  "user/add_user.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "user/js/add_user.js",
+      "js/my_ip.js"
+    ],
+    "refer": []
+  },
+  "map/map.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/my_ip.js"
+    ],
+    "refer": []
+  }
+}

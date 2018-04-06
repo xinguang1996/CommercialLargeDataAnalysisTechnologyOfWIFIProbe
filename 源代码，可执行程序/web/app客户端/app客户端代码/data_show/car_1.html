@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/modify.css" rel="stylesheet" />
+		<link href="../css/employee_3.css" rel="stylesheet" />
+		<link href="../css/ECharts_public.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="pre" id="pre">
+			<img src="../images/pre.png" />
+		</div>
+		<div class="next" id="next">
+			<img src="../images/next.png" />
+		</div>
+		<div id="my_loading_id" class="blank_box">
+			<div class="loading">
+				<img src="../img/logo_loading.gif" />
+			</div>
+			加载中，请稍后
+		</div>
+		<div id="no_loading" class="mui-content" style="display: none;">
+			<div class="tit">
+				车辆数:<span id="total_car_id" class="color1"></span>台
+			</div>
+			<div id="coach_id" class="pie-size echarts_box" style="height: 380px;"></div>
+			<!--<table class="table-style" id="tableId">
+		</table>-->
+			<ul id="tableId" class="mui-table-view">
+				<!--列表信息-->
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/bigdata_page_arr.js"></script>
+		<script src="../js/constants_value.js"></script>
+		<script src="../js/user_info.js"></script>
+		<script>
+			mui.init();
+
+			var tabPages = car_pages;
+			function left(){
+				console.log("你正在向左滑动");
+				plus.webview.show(tabPages[1], //子页面id
+					"fade-in", //页面打开效果
+					100 //页面打开效果持续时间
+				);
+				var nextPage = plus.webview.getWebviewById(tabPages[1]);
+				mui.fire(nextPage, "refreshCallback");
+			}
+			function right(){
+				console.log("你正在向右滑动");
+				plus.webview.show(tabPages[2], //子页面id
+					"fade-in", //页面打开效果
+					100 //页面打开效果持续时间
+				);
+				var nextPage = plus.webview.getWebviewById(tabPages[2]);
+				mui.fire(nextPage, "refreshCallback");
+			}
+			mui.plusReady(function() {
+				document.addEventListener("swipeleft", function() {
+					left();
+				});
+				document.addEventListener("swiperight", function() {
+					right();
+				});
+				document.getElementById("next").addEventListener('tap', function() {
+					left();
+				});
+				document.getElementById("pre").addEventListener('tap', function() {
+					right();
+				});
+			});
+
+			var myChart;
+			mui.ready(function() {
+				myChart = echarts.init(document.getElementById('coach_id'));
+				requestData();
+			});
+
+			//刷新回调
+			window.addEventListener('refreshCallback', function(e) {
+				myChart.resize();
+			});
+
+			//网络请求加载数据
+			function requestData() {
+				var inscode = UserInfo.inscode();
+				table = document.getElementById("tableId"); //得到要显示的标签id
+				console.log(inscode);
+				mui.ajax(baseurl + "mb_car/query_car_type", { //访问网络的url
+					data: {
+						inscode: inscode //驾培编号
+					},
+					dataType: 'json', //返回的数据格式
+					type: 'get', //请求的类型
+					timeout: 8000, //请求超时时间
+					success: function(data) { //请求成功
+						document.getElementById('my_loading_id').style.display = "none";
+						document.getElementById('no_loading').style.display = "block";
+						myChart.resize();
+						dealChartData(data);
+					},
+					error: function(xhr, type, errorThrown) {
+						if(type == "timeout" || type == "abort") {
+							mui.toast("网络请求失败,请检查网络再次尝试!");
+						}
+					}
+				});
+			}
+
+			//处理数据并显示图像
+			function dealChartData(data) {
+				console.log(JSON.stringify(data));
+				var record;
+				var allData = [];
+				var linData = [];
+				var total = data.total;
+				var otherNum = 0;
+				mui.each(data.list, function(i, t) {
+					record = {};
+					record.name = t.perdritype;
+					record.value = t.num;
+					
+					if (record.value != 0) {
+						allData.push(record);
+						linData.push(t.perdritype);
+					}
+					
+					var index = i + 1;
+					if(index < 5) {
+						var avenum;
+						if(t.num  == 0 ||total== 0){
+							avenum = 0;
+						}else{
+							avenum = ((t.num / total) * 100).toFixed(2);
+						}
+						tr = document.createElement('li'); //创建一行
+						tr.className = 'mui-table-view-cell'; //给这一行加一个样式
+						tr.innerHTML =
+							'<div class="mui-row text_style">' +
+							'	<div class="mui-col-xs-2 mui-col-sm-2 num">' +
+							'		<span>' + index + '</span>' +
+							'	</div>' +
+							'	<div class="mui-col-xs-4 mui-col-sm-4 car_type">' + t.perdritype + '</div>' +
+							'	<div class="mui-col-xs-3 mui-col-sm-3 car_num"><span class="percent_num1">' + t.num + '</span><span class="symbol">台</span></div>' +
+							'	<div class="mui-col-xs-3 mui-col-sm-3 car_percent"><span class="percent_num2">' +avenum+ '</span><span class="symbol">%</span></div>' +
+							'</div>';
+						table.appendChild(tr);
+					} else {
+						otherNum = otherNum + t.num;
+					}
+				});
+				var otherAveNum;
+				if(otherNum == 0 ||total== 0){
+					otherAveNum = 0;
+				}else{
+					otherAveNum = ((otherNum / total) * 100).toFixed(2);
+				}
+				tr = document.createElement('li'); //创建一行
+				tr.className = 'mui-table-view-cell'; //给这一行加一个样式
+				tr.innerHTML =
+					'<div class="mui-row text_style">' +
+					'	<div class="mui-col-xs-2 mui-col-sm-2 num">' +
+					'		<span>5</span>' +
+					'	</div>' +
+					'	<div class="mui-col-xs-4 mui-col-sm-4 car_type">其他</div>' +
+					'	<div class="mui-col-xs-3 mui-col-sm-3 car_num"><span class="percent_num1">' + otherNum + '</span><span class="symbol">台</span></div>' +
+					'	<div class="mui-col-xs-3 mui-col-sm-3 car_percent"><span class="percent_num2">' +otherAveNum+ '</span><span class="symbol">%</span></div>' +
+					'</div>';
+				table.appendChild(tr);
+				document.getElementById('total_car_id').innerText = total;
+
+				var option = {
+					backgroundColor: '#fff',
+					grid: {
+						top: '10%',
+						containLabel: true
+					},
+					title: {
+						text: '培训车辆车型分布情况',
+						x: 'center',
+						y: '8',
+						textStyle: {
+							fontSize: 15,
+							fontWeight: 'bold',
+							color: '#555555' // 副标题文字颜色
+						}
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+					color: [ '#5B9BD5', '#ED7D31', '#A5A5A5', '#4472C4',
+						'#70AD47', '#255E91', '#9E480E', '#636363', '#AE9035',
+						'#395584', '#43682B', '#7CAFDD', '#F1975A', '#BBBBBB',
+						'#FFCD33', '#43682B'
+					],
+					legend: {
+						bottom: 'bottom',
+						data: linData
+					},
+					series: [{
+						name: '车型',
+						type: 'pie',
+
+						label: {
+							normal: {
+								position: 'outside', //饼图外示图
+								formatter: '{d}%', //显示格式百分比
+								textStyle: {
+									color: '#000000' //设置饼图内字体颜色
+								}
+							},
+						},
+						labelLine: {
+							normal: {
+								show: true
+							}
+						},
+						radius: '40%',
+						center: ['50%', '45%'],
+						data: allData,
+						itemStyle: {
+							emphasis: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+					}]
+				};
+				myChart.setOption(option);
+			}
+		</script>
+	</body>
+
+</html>

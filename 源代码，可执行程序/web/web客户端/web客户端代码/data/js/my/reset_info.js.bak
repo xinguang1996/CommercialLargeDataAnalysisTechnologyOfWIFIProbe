@@ -1,0 +1,78 @@
+var mail;
+var tel;
+var wid;
+var addr;
+$(document).ready(function(){
+	request_user_info();
+});
+
+function request_user_info(){
+	//获取登陆者信息
+	var my_url = project_name + "/get_user";
+	$.ajax({
+		type: "GET",
+		url: my_url,
+		success: get_reset_user_info_callback
+	});
+}
+
+function get_reset_user_info_callback(data){
+	var temp = data.indexOf("error");
+	if(temp != -1){
+		window.location.href = project_name + "/data/login.html";
+	}else{
+		var obj = JSON.parse(data);
+		var name = obj["name"];
+		var my_name = name;
+		var my_id = obj["id"];
+		var my_mail = obj["mail"];
+		var my_tel = obj["tel"];
+		var my_wid = obj["wid"];
+		var my_addr = obj["addr"];
+		document.getElementById("id").innerHTML = my_id;
+		document.getElementById("name").innerHTML = my_name;
+		document.getElementById("mail").value = my_mail;
+		document.getElementById("tel").value = my_tel;
+		document.getElementById("wid").value = my_wid;
+		document.getElementById("addr").value = my_addr;
+	}
+}
+
+function reset_info(){
+	mail = document.getElementById("mail").value;
+	tel = document.getElementById("tel").value;
+	wid = document.getElementById("wid").value;
+	addr = document.getElementById("addr").value;
+	if(mail =="" || tel == "" || wid == "" || addr == ""){
+		alert("所有字段不能为空！");
+	}else{
+		request_reset_info();
+	}
+}
+
+function request_reset_info(){
+	var my_url = project_name + "/reset_info";
+	var obj = new Object();
+	obj.mail = mail;
+	obj.tel = tel;
+	obj.wid = wid;
+	obj.addr = addr;
+	$.ajax({
+		url: my_url,
+		data: obj,
+		type: "GET",
+		success: reset_info_callback,
+		error: function(data){
+			alert("请求服务器失败！");
+		}
+	});
+}
+
+function reset_info_callback(data){
+	var index = data.indexOf("ok");
+	if(index == 0){
+		window.location.href = project_name + "/data/index.html";
+	}else{
+		alert(data);
+	}
+}

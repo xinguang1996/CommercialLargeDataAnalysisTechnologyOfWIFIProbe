@@ -1,0 +1,135 @@
+
+
+聚合表达式
+
+{
+	"size":0,
+	"aggs":{
+		"range1":{
+			"date_range":{
+				"field":"@timestamp",
+				"ranges":[
+					{"from":"now-300s/s","to":"now/s"}			//筛选出要查询的时间段，精确到分钟，实例表示取最近10分钟的聚合结果，最多取十分钟
+					]
+			},
+			"aggs":{
+				"range2":{
+					"date_histogram":{
+						"field":"@timestamp",
+						"interval":"30s"				
+					},
+					"aggs":{
+						"data":{
+							"nested":{
+								"path":"data"
+							},
+							"aggs":{
+								"in_store":{
+									"range":{
+										"field":"data.range",
+										"ranges":{"from":0,"to":30}										
+									}				
+							
+								},
+								"all_store":{
+									"range":{
+										"field":"data.range",
+										"ranges":{"from":0}										
+									}				
+						
+								}	
+							}	
+						}
+					}	
+				}
+			}	
+		}
+	}
+}
+
+
+聚合结果：
+
+
+		u'{
+			"took":145,
+			"timed_out":false,
+			"_shards":{
+				"total":5,
+				"successful":5,
+				"failed":0
+			},
+			"hits":{
+				"total":74159,
+				"max_score":0.0,
+				"hits":[]
+			},
+			"aggregations":{
+				"range1":{
+					"buckets":[
+						{
+							"key":"2017-08-22T04:38:00.000Z-2017-08-22T04:48:00.000Z",
+							"from":1.50337668E12,
+							"from_as_string":"2017-08-22T04:38:00.000Z",
+							"to":1.50337728E12,
+							"to_as_string":"2017-08-22T04:48:00.000Z",
+							"doc_count":10,
+							"range2":{
+								"buckets":[
+									{
+										"key_as_string":"2017-08-22T04:38:00.000Z",
+										"key":1503376680000,
+										"doc_count":1,
+										"data":{
+											"doc_count":40,
+											"all_store":{
+												"buckets":[
+													{	
+														"key":"0.0-*",
+														"from":0.0,
+														"doc_count":40
+													}]
+											},
+											"in_store":{
+												"buckets":[
+													{
+														"key":"0.0-30.0",
+														"from":0.0,"to":30.0,
+														"doc_count":9
+													}]
+											}
+										}
+									},
+									{
+										"key_as_string":"2017-08-22T04:38:30.000Z",
+										"key":1503376740000,
+										"doc_count":1,
+										"data":{"
+											doc_count":46,
+											"all_store":{
+												"buckets":[
+													{
+														"key":"0.0-*",
+														"from":0.0,
+														"doc_count":46
+													}]
+											},
+											"in_store":{
+												"buckets":[
+													{
+														"key":"0.0-30.0",
+														"from":0.0,
+														"to":30.0,
+														"doc_count":8
+													}]
+											}
+										}
+									},
+									..........
+								]
+							}
+						}
+					]
+				}
+			}
+		}

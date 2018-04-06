@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Victors</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="css/data_show_style.css" rel="stylesheet" />
+		<meta http-equiv="Pragma" content="no-cache" />
+	</head>
+
+	<body>
+		<!-- 主界面移动、菜单不动 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+		  <!-- 菜单容器 -->
+		  <aside class="mui-off-canvas-left" id="offCanvasSide">
+		    <div class="mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <!-- 菜单具体展示内容 -->
+		        <ul class="mui-table-view mui-table-view-inverted">
+		            <li class="mui-table-view-cell mui-media">
+		                <a href="javascript:;">
+		                    <img id="my_img" class="mui-media-object mui-pull-left" src="../img/img.jpg" style="height: 40px; width: 40px;">
+		                    <div class="mui-media-body">
+		                    	欢迎您，
+		                        <p class="mui-ellipsis"><span id="my_name">郭欣光</p>
+		                    </div>
+		                </a>
+		            </li>
+		        </ul>
+		        <ul class="mui-table-view mui-table-view-inverted">
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_recent_data">
+	                      	近况展示
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_hour">
+	                       	数据视图（小时）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_day">
+	                       	数据视图（日）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_week">
+	                       	数据视图（周）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_month">
+	                       	数据视图（月）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="system_status">
+	                       	系统服务监控
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_boot_and_shutdown">
+	                       	开关机设置
+	                    </a>
+	                </li>
+	            </ul>
+		      </div>
+		      <nav class="mui-bar mui-bar-tab">
+		      	  <a class="mui-tab-item" id="to_index">
+		              <span class="mui-icon mui-icon-home"></span>
+		              <span class="mui-tab-label">首页</span>
+		          </a>
+		      	  <a class="mui-tab-item" id="reset_info">
+		              <span class="mui-icon mui-icon-gear"></span>
+		              <span class="mui-tab-label">设置</span>
+		         </a>
+		          <a class="mui-tab-item" id="log_out">
+		              <span class="mui-icon mui-icon-redo"></span>
+		              <span class="mui-tab-label">退出</span>
+		          </a>
+		      </nav>
+		    </div>
+		  </aside>
+		  <!-- 主页面容器 -->
+		  <div class="mui-inner-wrap">
+		    <!-- 主页面标题 -->
+		    <header class="mui-bar mui-bar-nav">
+		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>
+		      <h1 class="mui-title">数据展示(小时)</h1>
+		      <a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>
+		    </header>
+		    <div class="mui-content mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <div class="pre" id="pre">
+					<img src="img/pre.png" />
+				</div>
+				<div class="next" id="next">
+					<img src="img/next.png" />
+				</div>
+		        <div id="data_show" style="height: 450px;">
+		        	<div class="mui-progressbar mui-progressbar-infinite">
+		        		<span></span>
+		        	</div>
+		        </div>
+		      </div>
+		    </div> 
+		    <div class="mui-off-canvas-backdrop"></div>
+		  </div> 
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/my_ip.js"></script>
+		<script src="js/data_show_pages.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="js/data_show_hour.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			request_traffic_amount_and_the_amount_of_store_hour();
+			//刷新回调
+			window.addEventListener('refreshCallback', function(e) {
+				request_traffic_amount_and_the_amount_of_store_hour();
+				//traffic_amount_and_the_amount_of_store_and_into_the_store_rate_hour.resize();
+			});
+			var tabPages = data_show_hour;
+			function left(){
+				console.log("你正在向左滑动");
+				plus.webview.show(tabPages[1], //子页面id
+					"fade-in", //页面打开效果
+					100 //页面打开效果持续时间
+				);
+				var nextPage = plus.webview.getWebviewById(tabPages[1]);
+				mui.fire(nextPage, "refreshCallback");
+			}
+			function right(){
+				console.log("你正在向右滑动");
+				plus.webview.show(tabPages[2], //子页面id
+					"fade-in", //页面打开效果
+					100 //页面打开效果持续时间
+				);
+				var nextPage = plus.webview.getWebviewById(tabPages[2]);
+				mui.fire(nextPage, "refreshCallback");
+			}
+			mui.plusReady(function() {
+				/*
+				document.addEventListener("swipeleft", function() {
+					left();
+				});
+				document.addEventListener("swiperight", function() {
+					right();
+				});*/
+				document.getElementById("next").addEventListener('tap', function() {
+					left();
+				});
+				document.getElementById("pre").addEventListener('tap', function() {
+					right();
+				});
+			});
+			//request_traffic_amount_and_the_amount_of_store_hour();
+			/*
+			mui.ready(function(){
+				request_traffic_amount_and_the_amount_of_store_hour();
+			});
+			*/
+			//获取登陆者信息
+			mui.ajax(my_ip + "/get_user", {
+				type: "get",
+				timeout: 8000,
+				success: function(data){
+					var temp = data.indexOf("error");
+					if(temp != -1){
+						mui.openWindow({
+							url: '../login/login.html',
+							id: 'login.html'
+						});
+					}else{
+						var obj = JSON.parse(data);
+						var name = obj["name"];
+						//var img = obj["img"];
+						document.getElementById("my_name").innerHTML = name;
+						//document.getElementById("my_img").src = img;
+					}
+				},
+				error: function(xhr, type, errorThrown){
+					mui.toast("网络错误！");
+					/*
+					mui.openWindow({
+						url: '../login/login.html',
+						id: 'login.html'
+					});*/
+				}
+			});
+			//监听首页按钮
+			document.getElementById("to_index").addEventListener("tap", function(){
+			mui.openWindow({
+					url: '../index.html',
+					id: 'index.html'
+				});
+			});
+			//监听近况展示按钮
+			document.getElementById("to_recent_data").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../main/recent_data.html',
+					id: 'recent_data.html'
+				});
+			});
+			//监听数据展示（小时）按钮
+			document.getElementById("to_data_show_hour").addEventListener("tap", function(){
+				mui.openWindow({
+					url: 'data_show_hour.html',
+					id: 'data_show_hour.html'
+				});
+			});
+			//监听数据展示（日）按钮
+			document.getElementById("to_data_show_day").addEventListener("tap", function(){
+				mui.openWindow({
+					url: 'data_show_day.html',
+					id: 'data_show_day.html'
+				});
+			});
+			//监听数据展示（周）按钮
+			document.getElementById("to_data_show_week").addEventListener("tap", function(){
+				mui.openWindow({
+					url: 'data_show_week.html',
+					id: 'data_show_week.html'
+				});
+			});
+			//监听数据展示（月）按钮
+			document.getElementById("to_data_show_month").addEventListener("tap", function(){
+				mui.openWindow({
+					url: 'data_show_month.html',
+					id: 'data_show_month.html'
+				});
+			});
+			//监听开关机设置按钮
+			document.getElementById("to_boot_and_shutdown").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../setup/boot_and_shutdown.html',
+					id: 'boot_and_shutdown.html'
+				});
+			});
+			//监听退出按钮
+			document.getElementById("log_out").addEventListener("tap", function(){
+				mui.ajax(my_ip + "/log_out", {
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("ok");
+						if(index == 0){
+							mui.toast("退出成功！");
+							mui.openWindow({
+								url: '../index.html',
+								id: 'index.html'
+							});
+						}else{
+							alert(data);
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						alert("网络错误！");
+					}
+				});
+			});
+			//监听设置按钮
+			document.getElementById("reset_info").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../reset_info/reset_info_main.html',
+					id: 'reset_info_main.html'
+				});
+			});
+			//监听系统服务按钮
+			document.getElementById("system_status").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../system_status/system_status.html',
+					id: 'system_status.html'
+				});
+			});
+		</script>
+	</body>
+
+</html>

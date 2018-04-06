@@ -1,0 +1,662 @@
+﻿ <!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
+    <meta name="author" content="">
+
+	<link rel="icon" href="img/victors.ico" type="image/x-icon"/> 
+    <title>Victors</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    
+    <link type="text/css" href="css/base.css" rel="stylesheet"/>
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	
+    <!-- Custom CSS-->
+    <link href="css/general.css" rel="stylesheet">
+	
+	 <!-- Owl-Carousel -->
+    <link href="css/custom.css" rel="stylesheet">
+	<link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="css/magnific-popup.css"> 
+	
+	<script src="js/modernizr-2.6.2.min.js"></script>  <!-- Modernizr /-->
+	<script src="js/PIE_IE9.js"></script>  
+	<script src="js/PIE_IE678.js"></script>  
+	
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body id="home">
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+	
+	<!-- FullScreen -->
+    <div class="intro-header">
+		<div class="col-xs-12 text-center abcen1">
+			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">客流数据综合分析系统</h1>
+			<br><br><br><br>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Developed by Victors</h3>
+			<!-- Sweat is the lubricant of success!--><!--
+			<ul class="list-inline intro-social-buttons">
+				<li><a href="http://www.ccut.edu.cn" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">CCUT</span></a>
+				</li>
+				<li id="download" ><a href="#downloadlink" class="btn  btn-lg mybutton_standard wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">关于我们</span></a>
+				</li>
+			</ul>
+			 -->
+		</div>    
+        <!-- /.container -->
+		<div class="col-xs-12 text-center abcen wow fadeIn">
+			<div class="button_down "> 
+				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+			</div>
+		</div>
+    </div>
+	
+	<!-- NavBar-->
+	<nav class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#home">Victors</a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					
+					<li class="menuItem"><a href="#whatis">产品功能</a></li>
+					<li class="menuItem"><a href="#useit">使用介绍</a></li>
+					<li class="menuItem"><a href="#screen">实用事例</a></li>
+					<li class="menuItem"><a href="#technology">技术路线</a></li>
+					<li class="menuItem"><a href="#aboutus">开发人员</a></li>
+					<li class="menuItem"><a href="#contact">联系我们</a></li>
+				</ul>
+			</div>
+		   
+		</div>
+	</nav> 
+	<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
+	<!-- What is -->
+	<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>产品功能</h2>
+				<p class="lead" style="margin-top:0">Some function of the entrance</p>
+				
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <a href="/softbei/data/real_time_data_show.html" target="_blank"><img class="rotate" src="img/icon/search.svg" alt="Generic placeholder image"></a>
+				  <h3>实时展示</h3>
+				  <p class="lead">客流量，入店量，入店率等客流数据的实时信息展示. </p>
+
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				   <a href="/softbei/data/set_probe.html" target="_blank"><img  class="rotate" src="img/icon/tanzhen.svg" alt="Generic placeholder image"></a>
+				   <h3>探针配置</h3>
+				   <p class="lead">对系统接入的wifi探针设备进行系统信息配置. </p>
+				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				   <a href="/softbei/data/boot_and_shutdown.html" target="_blank"><img  class="rotate" src="img/icon/kongzhi.svg" alt="Generic placeholder image"></a>
+				   <h3>远程控制</h3>
+				   <p class="lead">在线设置探针，比如设备开关机，定时重启等. </p>
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+			</div><!-- /.row -->
+				
+			<div class="row tworow">
+			
+				<div class="col-sm-4  wow fadeInDown text-center">
+				  <a href="/softbei/data/index.html" target="_blank"><img class="rotate" src="img/icon/lixian.svg" alt="Generic placeholder image"></a>
+				  <h3>离线查询</h3>
+				  <p class="lead">客流量，入店量等客流信息的历史查询，环比及多维度比较. </p>
+				 <!-- <p><a class="btn btn-embossed btn-primary visew" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				   <a href="/softbei/data/system_status.html" target="_blank"><img  class="rotate" src="img/icon/xitong.svg" alt="Generic placeholder image"></a>
+				   <h3>系统服务</h3>
+				   <p class="lead">实时监控服务器设备，显示所有服务器设备的运行状态. </p>
+				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				   <a href="/softbei/data/index.html" target="_blank"><img  class="rotate" src="img/icon/map.svg" alt="Generic placeholder image"></a>
+				   <h3>设备定位</h3>
+				 <p class="lead">wifi探针设备的分布位置，相关位置抓取数据包的量的大小. </p>
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+			</div><!-- /.row -->
+		</div>
+	</div>
+	
+	<!-- Use it -->
+    <div id ="useit" class="content-section-a">
+
+        <div class="container">
+			
+            <div class="row">
+			
+				<div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img class="img-responsive " src="img/ipad.png" alt="">
+                </div>
+				
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">微信</h3>
+                    <p class="lead">打开微信，进入公众号，控制你所想的，查询你所要的. 	</p>
+					
+					<ul class="descp lead2">
+						<li><i class="glyphicon glyphicon-home"></i> 可靠便捷平台</li>
+						<!--<li><i class="glyphicon glyphicon-music"></i> Reliable and Secure Platform</li>-->
+						<li><i class="glyphicon glyphicon-off"></i> 一键控制设备</li>
+						<li><i class="glyphicon glyphicon-qrcode"></i> 便捷查询信息</li>
+					</ul>
+					 <p><a class="btn btn-embossed btn-primary" href="#" role="button">查看详情</a> 
+					 <a class="btn btn-embossed btn-info" href="#" role="button">点击访问</a></p>
+				</div>   
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <div class="content-section-b"> 
+		
+		<div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeftBig">
+                     <div id="owl-demo-1" class="owl-carousel">
+						<a href="img/iphone.png" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+							</div>
+						</a>
+						<!-- 
+						<a href="img/iphone.png" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+							</div>
+						</a>
+						<a href="img/iphone.png" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+							</div>
+						</a>
+						-->
+					</div>       
+                </div>
+				
+                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">短信</h3>
+                    <p class="lead">无时无刻，随时随地通过短信对探针设备进行控制. 
+					</p>
+					
+					<ul class="descp lead2">
+						<li><i class="glyphicon glyphicon-font"></i> 关键智能识别</li>
+						<!--<li><i class="glyphicon glyphicon-music"></i> Reliable and Secure Platform</li>-->
+						<li><i class="glyphicon glyphicon-signal"></i> 无视网络状态</li>
+						<li><i class="glyphicon glyphicon-circle-arrow-down"></i> 控制结果返回</li>
+					</ul>
+
+					 <p><a class="btn btn-embossed btn-primary" href="#" role="button">查看详情</a> 
+					 <a class="btn btn-embossed btn-info" href="#" role="button">点击访问</a></p>
+				</div>  			
+			</div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+             <div class="row">
+			 
+				<div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img class="img-responsive " src="img/diannao.png" alt="">
+                </div>
+			 
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">网站</h3>
+                    <p class="lead">精准，高效，全面的系统状态展示，多维度的数据统计.
+					</p>
+					
+					<ul class="descp lead2">
+						<li><i class="glyphicon glyphicon-refresh"></i> 客流历史查询</li>
+						<!--<li><i class="glyphicon glyphicon-music"></i> Reliable and Secure Platform</li>-->
+						<li><i class="glyphicon glyphicon-search"></i> 服务设备监控</li>
+						<li><i class="glyphicon glyphicon-lock"></i> 实时信息获取</li>
+					</ul>
+					 <p><a class="btn btn-embossed btn-primary" href="#" role="button">查看详情</a> 
+					 <a class="btn btn-embossed btn-info" href="#" role="button">点击访问</a></p>
+				</div>           
+            </div>
+        </div>
+
+    </div>
+
+	<!-- Screenshot -->
+	<div id="screen" class="content-section-b">
+        <div class="container">
+          <div class="row" >
+			 <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
+				<h2>实用事例</h2>
+				<p class="lead" style="margin-top:0">Example of how to use it.</p>
+			 </div>
+		  </div>
+		    <div class="row wow bounceInUp" >
+              <div id="owl-demo" class="owl-carousel">
+				
+				<a href="img/wechat_chaxun.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/wechat_chaxun.png" alt="Owl Image">
+					</div>
+				</a>
+				
+               <a href="img/app.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/app.png" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="img/sms_chaxun.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/sms_chaxun.png" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="img/wechat_chaxun.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/wechat_chaxun.png" alt="Owl Image">
+					</div>
+				</a>
+				
+               <a href="img/app.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/app.png" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="img/sms_chaxun.png" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="img/sms_chaxun.png" alt="Owl Image">
+					</div>
+				</a>
+              </div>       
+          </div>
+        </div>
+
+
+	</div>
+
+<!--
+	<div  class="content-section-c ">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center white">
+				<h2>Get Live Updates</h2>
+				<p class="lead" style="margin-top:0">A special thanks to Death.</p>
+			 </div>
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="mockup-content">
+						<div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+							<button type="button "><span>Subscribe to our Newsletter</span></button>
+							<div class="morph-content">
+								<div>
+									<div class="content-style-form content-style-form-4 ">
+										<h2 class="morph-clone">Subscribe to our Newsletter</h2>
+										<form>
+											<p><label>Your Email Address</label><input type="text"/></p>
+											<p><button>Subscribe me</button></p>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>	
+			</div>
+		</div>
+	</div>	
+-->
+
+
+
+
+
+	<!-- Technology -->
+	<div id="technology" class="content-section-a">
+		<div class="container">
+			<div class="row">
+			
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>技术路线</h2>
+				<p class="lead" style="margin-top:0">We use the technology.</p>
+			 </div>
+			 
+				<div class="col-sm-6  block wow bounceIn">
+					<div class="row">
+						<!--<div class="col-md-4 box-icon rotate"> 
+							<i class="fa fa-desktop fa-4x "> </i> --> 
+					    <div class="col-sm-4  wow fadeInDown text-center">
+							<a href="http://www.haproxy.org/" target="_blank"><img class="rotate" height=150 width=150 src="img/icon/haproxy.png" alt="Generic placeholder image"></a>
+						</div>
+						<div class="col-md-8 box-ct">
+							<h3> HAProxy </h3>
+							<p> HAroxy提供高可用性、负载均衡，以及基于TCP和HTTP的应用程序代理. </p>
+						</div>
+				  </div>
+			  </div>s
+			  <div class="col-sm-6 block wow bounceIn">
+					<div class="row">
+					 <!-- <div class="col-md-4 box-icon rotate"> 
+						<i class="fa fa-picture-o fa-4x "> </i>  -->
+					  <div class="col-sm-4  wow fadeInDown text-center">
+						<a href="https://kibana.logstash.es/content/logstash/index.html" target="_blank"><img class="rotate" height=150 width=150 src="img/icon/ELK.png" alt="Generic placeholder image"></a>
+					  </div>
+					  <div class="col-md-8 box-ct">
+						<h3> ELK </h3>
+						<p> ELK提供数据解析，存储，展示的一站式解决方案，一次存入，多次读取. </p> 
+					  </div>
+					</div>
+			  </div>
+		  </div>
+		  
+		  <div class="row tworow">
+				<div class="col-sm-6  block wow bounceIn">
+					<div class="row">
+						<!-- <div class="col-md-4 box-icon rotate"> 
+							<i class="fa fa-magic fa-4x "> </i> -->
+					    <div class="col-sm-4  wow fadeInDown text-center">
+							<a href="http://spark.apache.org/" target="_blank"><img class="rotate" height=150 width=150 src="img/icon/spark.png" alt="Generic placeholder image"></a>
+						</div>
+						<div class="col-md-8 box-ct">
+							<h3> Spark </h3>
+							<p> Apache Spark™是一个快速和通用的数据处理引擎，高速，易于使用. </p>
+						</div>
+				  </div>
+			  </div>
+			  <div class="col-sm-6 block wow bounceIn">
+					<div class="row">
+					  <!--<div class="col-md-4 box-icon rotate"> 
+						<i class="fa fa-heart fa-4x "> </i> -->
+					  <div class="col-sm-4  wow fadeInDown text-center">
+						<a href="http://echarts.baidu.com/" target="_blank"><img class="rotate" height=150 width=150 src="img/icon/echarts.png" alt="Generic placeholder image"></a>
+					  </div>
+					  <div class="col-md-8 box-ct">
+						<h3> ECharts</h3>
+						<p> ECharts是一款开源、功能强大的数据可视化产品,提供完美的客户体验. </p> 
+					  </div>
+					</div>
+			  </div>
+		  </div>
+		</div>
+	</div>
+	
+	<!-- Banner Download -->
+	<!--<div id="downloadlink" class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Download Free</h2>
+				<p class="lead" style="margin-top:0">Pay with a Tweet</p>
+				<p><a class="btn btn-embossed btn-primary view" role="button">Free Download</a></p> 
+			 </div>
+			</div>
+		</div>
+	</div> -->
+	
+
+	<div  id="aboutus" class="content-section-c ">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center white">
+				<h2>开发人员</h2>
+				<p class="lead" style="margin-top:0">Our team members</p>
+			 </div>
+			</div>
+
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="mockup-content">
+						<div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+							<button type="button "><span>订阅我们的实时通讯</span></button>
+							<div class="morph-content">
+								<div>
+									<div class="content-style-form content-style-form-4 ">
+										<h2 class="morph-clone">订阅我们的实时通讯</h2>
+										<form>
+											<p><label>您的邮箱地址</label><input type="text"/></p>
+											<p><button>点击订阅</button></p>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>	
+
+            <div class="row abt-item-block text-center">
+               <div class="col-lg-3">
+                  <div class=" container-fluid abt-item">
+                     <div class="container-fluid img-base">
+                        <img alt="member one" title="members"  class="img-responsive" src="img/liugang.jpg"/>
+                     </div>
+                     <div class="container-fluid">
+                        <h4>刘钢</h4>
+                        <div class="container-fluid item-title">指导老师</div>
+                     </div>
+                     <div class=" container-fluid  social-connect-me">
+                        <ul class="list-inline">
+                           <li><a class="fa fa-linkedin" href="#"></a></li>
+                           <li><a class="fa fa-google-plus" href="#"></a></li>
+                           <li><a class="fa fa-facebook" href="#"></a></li>
+                           <li><a class="fa fa-twitter" href="#"></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class=" container-fluid abt-item">
+                     <div class="container-fluid img-base">
+                        <img alt="member two" title="members" class="img-responsive" src="img/tang.jpg"/>
+                     </div>
+                     <div class="container-fluid">
+                        <h4 >汤佳辉</h4>
+                        <div class="container-fluid item-title">负责人</div>
+                     </div>
+                     <div class=" container-fluid  social-connect-me">
+                        <ul class="list-inline">
+                           <li><a class="fa fa-linkedin" href="#"></a></li>
+                           <li><a class="fa fa-google-plus" href="#"></a></li>
+                           <li><a class="fa fa-facebook" href="#"></a></li>
+                           <li><a class="fa fa-twitter" href="#"></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class=" container-fluid abt-item">
+                     <div class="container-fluid img-base">
+                        <img  alt="member three" title="members" class="img-responsive" src="img/zhao.jpg"/>
+                     </div>
+                     <div class="container-fluid">
+                        <h4>赵鹏越</h4>
+                        <div class="container-fluid item-title">小组成员</div>
+                     </div>
+                     <div class=" container-fluid  social-connect-me">
+                        <ul class="list-inline">
+                           <li><a class="fa fa-linkedin" href="#"></a></li>
+                           <li><a class="fa fa-google-plus" href="#"></a></li>
+                           <li><a class="fa fa-facebook" href="#"></a></li>
+                           <li><a class="fa fa-twitter" href="#"></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class=" container-fluid abt-item">
+                     <div class="container-fluid img-base">
+                        <img alt="member four" title="members"  class="img-responsive" src="img/guo.jpg"/>
+                     </div>
+                     <div class="container-fluid">
+                        <h4>郭欣光</h4>
+                        <div class="container-fluid item-title">小组成员</div>
+                     </div>
+                     <div class=" container-fluid  social-connect-me">
+                        <ul class="list-inline">
+                           <li><a class="fa fa-linkedin" href="#"></a></li>
+                           <li><a class="fa fa-google-plus" href="#"></a></li>
+                           <li><a class="fa fa-facebook" href="#"></a></li>
+                           <li><a class="fa fa-twitter" href="#"></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+		</div>
+	</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Contact -->
+	<div id="contact" class="content-section-a">
+		<div class="container">
+			<div class="row">
+			
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>联系我们</h2>
+				<p class="lead" style="margin-top:0">A special thanks to you.</p>
+			</div>
+			
+			<form role="form" action="" method="post" >
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">您的姓名</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputEmail">您的邮箱</label>
+						<div class="input-group">
+							<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputMessage">信息内容</label>
+						<div class="input-group">
+							<textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+
+					<input type="submit" name="submit" id="submit" value="提交" class="btn wow tada btn-embossed btn-primary pull-right">
+				</div>
+			</form>
+			
+			<hr class="featurette-divider hidden-lg">
+				<div class="col-md-5 col-md-push-1 address">
+					<address>
+					<h3>办公地点</h3>
+					<p class="lead"><a href="#">Victors团队<br>
+					<a>吉林省长春市延安大街2055号</a><br>
+					长春工业大学<br>
+					电话: 135-9609-0059<br>
+					邮箱: 986537890@qq.com</p>
+					</address>
+
+					<h3>社交账号</h3>
+					<li class="social"> 
+					<a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
+					<a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a> 
+					<a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
+					<a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+					</li>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/script.js"></script>
+	<!-- StikyMenu -->
+	<script src="js/stickUp.min.js"></script>
+	<script type="text/javascript">
+	  jQuery(function($) {
+		$(document).ready( function() {
+		  $('.navbar-default').stickUp();
+		  
+		});
+	  });
+	
+	</script>
+	<!-- Smoothscroll -->
+	<script type="text/javascript" src="js/jquery.corner.js"></script> 
+	<script src="js/wow.min.js"></script>
+	<script>
+	 new WOW().init();
+	</script>
+	<script src="js/classie.js"></script>
+	<script src="js/uiMorphingButton_inflow.js"></script>
+	<!-- Magnific Popup core JS file -->
+	<script src="js/jquery.magnific-popup.js"></script> 
+</body>
+
+</html>

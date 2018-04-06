@@ -1,0 +1,31 @@
+spark.executormemory
+spark.drivermemory
+spark.executor.cores
+spark.network.timeout
+
+
+
+POST请求
+
+
+url:http://192.168.1.52:9200/sou/tz_1/_search?filter_path=hits.hits._source&size=0
+请求体：{"query":{"range":{"@timestamp":{"gte":"2017-07-30T00:00:00","lt":"2017-08-30T00:00:00"}}},"sort":{"@timestamp":{"order":"asc"}}}
+返回格式：{'hits':{'hits':[{'_source':{探针数据}},{'_source':{探针数据}},{'_source':{探针数据}}........]}}
+
+
+
+
+elasticsearch API
+
+
+设置：
+es = elasticsearch.Elasticsearch(['192.168.1.52:9200','192.168.1.68:9200'],request_timeout=1000)
+
+读数据
+	query1 = {"query":{"range":{"@timestamp":{"gte":"2017-07-30T00:00:00","lt":"2017-08-30T00:00:00"}}}}
+	query2 = {"query":{"range":{"@timestamp":{"gte":"2017-07-30T00:00:00","lt":"2017-08-30T00:00:00"}}},"sort":{"@timestamp":{"order":"asc"}}}
+	1.获取count:count = es.count(index='sou',doc_type='tz_1',body=query1)
+		返回值：{u'count': 44640, u'_shards': {u'successful': 14, u'failed': 0, u'total': 14}}
+	2.获取数据: data = es.search(index='sou',doc_type='tz_1',body=query2,size = 1000,_source = True,request_timeout = 1000,from_ = 0)
+			改变from_值
+		返回值：{'hits':{'hits':[{'_source':{标准探针数据}},{'_source':{标准探针数据}},{'_source':{标准探针数据}}.....]}}

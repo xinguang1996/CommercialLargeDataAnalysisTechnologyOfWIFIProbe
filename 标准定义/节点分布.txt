@@ -1,0 +1,41 @@
+
+IP			HOSTNAME			用途
+192.168.1.10		http-master			部署HAproxy，作为数据接收点
+192.168.1.11		http-node1			部署logstash_1，处理http请求
+192.168.1.12		http-node2			部署logstash_2
+192.168.1.13		http-node3			部署logstash_3
+192.168.1.14		http-node4			部署logstash_4
+192.168.1.15		http-redis			部署redis
+192.168.1.16		http-node6			部署logstash_5
+192.168.1.17		http-bide7			部署logstash_6
+192.168.1.18		http-node8			部署logstash_7
+192.168.1.19		http-node9			部署logstash_8
+
+
+192.168.1.50		es-master1			部署主节点1
+192.168.1.51		es-master2			部署主节点2，用作备份
+192.168.1.52		es-master3			部署主节点3，用作备份
+192.168.1.53		es-node1			部署es数据节点，下同
+192.168.1.54		es-node2			-
+192.168.1.55		es-node3			-	
+192.168.1.56		es-node4			-
+192.168.1.57		es-node5			-
+192.168.1.58		es-node6			-
+192.168.1.59		es-node7			-
+192.168.1.60		es-node8
+192.168.1.61		es-node9
+192.168.1.62		es-node10
+192.168.1.63		es-node11
+192.168.1.64		es-node12
+192.168.1.65		es-node13			
+192.168.1.66		es-node14			
+192.168.1.67		es-node15			数据备份节点，下同
+192.168.1.68		es-node16
+192.168.1.69		es-node17
+
+
+
+192.168.1.100
+192.168.1.101
+192.168.1.102
+

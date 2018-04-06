@@ -1,0 +1,240 @@
+#coding: utf-8
+
+'''
+Match: 2017 China Software Cup
+Topic: Commercial large data analysis technology based on WIFI probe.
+School: CCUT(Changchun University Of Technology)
+Date: 2017.03 - 2017-06
+Team: teamName   --- Victors
+	  teamLeader --- Jiahui Tang
+	  teamMember --- Pengyue Zhao
+	  teamMember --- Xinguang Guo
+'''
+
+#import the necessary packages
+from pyspark import SparkContext, SparkConf
+import copy
+import json
+import re
+import time
+import datetime
+from operator import *
+#import numpy as np
+#import pandas
+#import matplotlib
+#from elasticsearch import Elasticsearch
+
+
+#import the packages of mine
+from mytime import *
+
+import sys
+#sys.path.append('../')
+
+#from base import Counter
+
+# set the SPARK
+spark_conf = SparkConf().setAppName('WifiProbeBigData')
+sc = SparkContext(conf = spark_conf)
+
+def visiting_cycle(es_rdd):
+    LOW = 200
+    MID = 120
+    HIGH = 70
+    
+    BOUNCE = 30
+    DEEP = 400
+
+    high, mid, low, sleep = 0, 0, 0, 0
+    bounce, deep = 0, 0
+
+    # Format: {mac1: [时间间隔之和, 次数], mac2: [], ...}
+    interval_list = {}
+    
+    # Format: {mac1: [驻店时长之和, 次数], mac2: [], ...}
+    resident_list = {}
+
+    # Format: {mac1: lasttime, mac2: lasttime, ...}
+    mac_lasttime_list = {}
+
+    # Format: {mac1: ave_interval, mac2: ...}
+    ave_interval_list = {}
+
+    # Format: {mac1: ave_resident, mac2: ...}
+    ave_resident_list = {}
+
+    # Convert to PythonList
+    # all_info = es_rdd.collect()
+   
+    # print es_rdd.collect()
+    
+
+    # Get the K-V pair(mac-firsttime) in this time period
+    for i in all_info:
+        for j in i[-1]['data']:
+            temp_mac_lasttime = {j['mac']: i[-1]['time']}
+            
+            if not mac_lasttime_list.has_key(j['mac']):
+                mac_lasttime_list.update(temp_mac_lasttime)
+            else:
+                pass
+
+    # Init the lists
+    for index, mac in enumerate(mac_lasttime_list):
+        temp_resident = {mac: [0, 1]}
+        resident_list.update(temp_resident)
+        
+        temp_interval = {mac: [0, 1]}
+        interval_list.update(temp_interval)
+
+    for i in all_info:
+        for j in i[-1]['data']:
+            temp_mac = j['mac']
+            temp_time = i[-1]['time']
+            
+            #func timechange time_temp->datetime_temp
+            testtime1 = MyTime(temp_time)
+            temp_datetime = testtime1.ctime_to_datetime()
+
+            if mac_lasttime_list.has_key(temp_mac):
+                mac_lasttime = mac_lasttime_list[temp_mac]
+
+                #timechang ->type(datatime.datetime)
+                testtime2 = MyTime(mac_lasttime)
+                temp_lasttime = testtime2.ctime_to_datetime()
+
+                temp_interval = (temp_datetime - temp_lasttime).seconds
+		
+		#print temp_interval
+
+                # Update the resident and interval
+                if temp_interval < 100:
+                    temp_resident = {temp_mac: [resident_list[temp_mac][0] + temp_interval, resident_list[temp_mac][1]]}
+                    resident_list.update(temp_resident)
+
+                else:
+                    temp_interval = {temp_mac: [resident_list[temp_mac][0], resident_list[temp_mac][1] + 1]}
+                    interval_list.update(temp_interval)
+
+                # Update the lasttime
+                temp_mac_lasttime = {temp_mac: temp_time}
+                mac_lasttime_list.update(temp_mac_lasttime)
+
+    # Get the ave
+    for index, key in enumerate(interval_list):
+        ave_resident = div(interval_list[key][0], float(interval_list[key][1]))
+
+        ave_interval_temp = {key: ave_interval}
+        ave_interval_list.update(ave_interval_temp)
+
+    for index, key in enumerate(resident_list):
+        ave_resident = div(resident_list[key][0], float(resident_list[key][1]))
+
+        ave_resident_temp = {key: ave_resident}
+        ave_resident_list.update(ave_resident_temp)
+    '''    
+    # Get the active of customer
+    for index, key in enumerate(ave_interval_list):
+        if ave_interval_list[key] < HIGH and ave_interval_list[key] >= 0:
+            high += 1
+        elif ave_interval_list[key] < Mid:
+            mid += 1
+        elif ave_interval_list[key] < LOW:
+            low += 1
+        elif ave_interval_list[key] >= LOW:
+            sleep += 1
+        else:
+            raise ValueError
+
+    # Get the bounce rate and deep rate
+    for index, key in enumerate(ave_resident_list):
+	if ave_resident_list[key] < BOUNCE:
+            bounce += 1
+	elif ave_resident_list[key] >= BOUNCE:
+	    pass
+	else:
+	    raise ValueError
+
+    return sleep, low, mid, high, bounce, deep
+    '''
+
+
+    interval_list = interval_list.items()
+
+    # Convert to sparkRDD
+    interval_rdd = sc.parallelize(interval_list)
+    #resident_rdd = es.parallelize(resident_list)
+    
+    # Return format: [(mac1, ave_interval), (), ...]
+    ave_interval_rdd = interval_rdd.mapValues(lambda x: div(x[0], x[1]))
+    #ave_resident_rdd = resident_rdd.mapValue(lambda x, y: div(x, y))
+    
+    '''
+    # Get the different range of the interval/resdient
+    interval_num1 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num2 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num3 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num4 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num5 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num6 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num7 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num8 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num9 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    interval_num10 = ave_interval_rdd.value().filter(lambda x: x < 2).count()
+    '''
+    '''
+    resident_num1 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num2 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num3 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num4 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num5 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num6 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num7 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num8 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num9 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    resident_num10 = ave_resident_rdd.value().filter(lambda x: x < 2).count()
+    '''
+    # Get the different degrees of activity
+    sleep = ave_interval_rdd.values().filter(lambda x: x >= LOW).count()
+    #low = ave_interval_rdd.values().filter(lambda x: x >= MID and x < LOW).count()
+    #mid = ave_interval_rdd.values().filter(lambda x: x >= HIGH and x < MID).count()
+    #high = ave_interval_rdd.values().filter(lambda x: x < HIGH).count()
+    '''
+    #Get the deep rate and bounce rate
+    total = ave_resident_rdd.value().count()
+    deep_rate = div(ave_interval_rdd.value().filter(lambda x: x > DEEP).count(), total)
+    bounce_rate = div(ave_interval_rdd.value().filter(lambda x: x < BOUNCE).count(), total)
+    '''
+    #return ave_interval_rdd.collect()
+    #return 'ok'
+    return sleep
+
+def main():
+    #now = datetime.datetime.now()
+    #now = datetime.datetime(2017, 5, 21, 22, 0, 0, 0)
+    now = datetime.datetime(2017, 8, 1, 0, 0, 0, 0)
+
+    interval_hour = datetime.timedelta(hours = 1)
+    interval_day = datetime.timedelta(days = 1)
+    interval_week = datetime.timedelta(weeks = 1)
+    interval_month = datetime.timedelta(days = 30)
+
+    es_read_conf = {
+        "es.nodes" : "192.168.1.52",
+ 	"es.port" : "9200",
+	"es.resource" : "sou/tz_1",   #源数据索引/type
+	"es.query": '{"range": {"@timestamp": {"gte": "2017-07-30T00:00:00", "lt": "2017-08-30T00:00:00"}}}'
+        }
+
+    es_rdd = sc.newAPIHadoopRDD(
+        inputFormatClass = "org.elasticsearch.hadoop.mr.EsInputFormat",
+        keyClass = "org.apache.hadoop.io.NullWritable",
+        valueClass = "org.elasticsearch.hadoop.mr.LinkedMapWritable",
+        conf = es_read_conf
+        )
+    
+    data = visiting_cycle(es_rdd)
+    print data
+
+if __name__ == '__main__':
+    main()

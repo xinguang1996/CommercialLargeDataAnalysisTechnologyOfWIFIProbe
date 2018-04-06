@@ -1,0 +1,40 @@
+结果数据格式：
+
+	索引：res
+	type：用户id-hour（时维度），用户id-day（天维度），用户id-week（周维度），用户id-month（月维度），用户id-other（无维度数据）
+	id：年-月-日-时
+	json格式（_source字段）：
+		有时间维度的数据的json格式：
+		{
+			"Traffic amount":,				//客流量，单位：人
+			"The amount of store":,				//入店量，单位：人
+			"Into the store rate":,				//入店率
+			"The new and old customers": {			//新老顾客（人数或比率）
+				"new": ,
+				"old": 
+			},
+			"Deep rate":,					//深访率
+			"Bounce rate":					//跳出率
+		}
+		无时间维度的数据的json格式：
+		{
+			"Visiting cycle":[[],[]],			//来访周期，第一个列表为访问间隔，第二个列表为人数，下标相互对应
+			"Customer active": {				//顾客活跃度
+				"High activity":,
+				"Mid activity": ,
+				"Sleep activity":,
+				"Low activity": 
+			},
+			"The resident time":[[],[]],			//驻店时长，同上
+		}
+
+		注：所有值皆为字符串
+
+
+元数据格式：
+	
+	索引：sov
+	type：tz_1		//探针id
+	id：		//字段
+	json格式（_source字段）：
+		标准源数据格式

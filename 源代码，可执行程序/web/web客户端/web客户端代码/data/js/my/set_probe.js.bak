@@ -1,0 +1,99 @@
+var probe_ip;
+var probe_post;
+var send_frequency;
+var visit_the_time;
+var out_of_time;
+var shop_distance;
+var sleep_threshold;
+var low_activity_threshold;
+var middle_activity_threshold;
+$(document).ready(function(){
+	request_get_probe();
+});
+
+function request_get_probe(){
+	var my_url = project_name + "/get_probe";
+		url: my_url,
+		type: "GET",
+		success: get_probe_callback,
+		error: function(data){
+			alert("请求服务器失败！");
+		}
+	});
+}
+
+function get_probe_callback(data){
+	var index = data.indexOf("error");
+	if(index == 0){
+		alert(data);
+	}else{
+		var obj = JSON.parse(data);
+		probe_ip = obj["Server Ip"];
+		probe_post = obj["Server Post"];
+		send_frequency = obj["Send frequency"];
+		visit_the_time = obj["Visit the time"];
+		out_of_time = obj["Out of time"];
+		shop_distance = obj["Shop distance"];
+		sleep_threshold = obj["Sleepy threshold"];
+		low_activity_threshold = obj["Low activity threshold"];
+		middle_activity_threshold = obj["Middle activity threshold"];
+		document.getElementById("probe_ip").value = probe_ip;
+		document.getElementById("probe_post").value = probe_post;
+		document.getElementById("send_frequency").value = send_frequency;
+		document.getElementById("visit_the_time").value = visit_the_time;
+		document.getElementById("out_of_time").value = out_of_time;
+		document.getElementById("shop_distance").value = shop_distance;
+		document.getElementById("sleep_threshold").value = sleep_threshold;
+		document.getElementById("low_activity_threshold").value = low_activity_threshold;
+		document.getElementById("middle_activity_threshold").value = middle_activity_threshold;
+
+	}
+}
+function set_probe(){
+	probe_ip = document.getElementById("probe_ip").value;
+	probe_post = document.getElementById("probe_post").value;
+	send_frequency = document.getElementById("send_frequency").value;
+	visit_the_time = document.getElementById("visit_the_time").value;
+	out_of_time = document.getElementById("out_of_time").value;
+	shop_distance = document.getElementById("shop_distance").value;
+	sleep_threshold = document.getElementById("sleep_threshold").value;
+	low_activity_threshold = document.getElementById("low_activity_threshold").value;
+	middle_activity_threshold = document.getElementById("middle_activity_threshold").value;
+	if(probe_ip == "" || probe_post == "" || send_frequency == "" || visit_the_time == "" || out_of_time == "" || shop_distance == "" || sleep_threshold == "" || low_activity_threshold == "" || middle_activity_threshold == ""){
+		alert("所有字段不能为空！");
+	}else{
+		request_set_probe();
+	}
+}
+
+function request_set_probe(){
+	var my_url = project_name + "/set_probe";
+	var obj = new Object();
+	obj.probe_ip = probe_ip;
+	obj.probe_post = probe_post;
+	obj.send_frequency = send_frequency;
+	obj.visit_the_time = visit_the_time;
+	obj.out_of_time = out_of_time;
+	obj.shop_distance = shop_distance;
+	obj.sleep_threshold = sleep_threshold;
+	obj.low_activity_threshold = low_activity_threshold;
+	obj.middle_activity_threshold = middle_activity_threshold;
+	$.ajax({
+		url: my_url,
+		data: obj,
+		type: "POST",
+		success: set_probe_callback,
+		error: function(data){
+			alert("请求服务器失败！");
+		}
+	});
+}
+
+function set_probe_callback(data){
+	var index = data.indexOf("ok");
+	if(index == 0){
+		window.location.href = project_name + "/data/index.html";
+	}else{
+		alert(data);
+	}
+}

@@ -1,0 +1,164 @@
+http://0.0.0.0:80/
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    app.run()
+  File "/usr/local/lib/python2.7/dist-packages/web/application.py", line 313, in run
+    return wsgi.runwsgi(self.wsgifunc(*middleware))
+  File "/usr/local/lib/python2.7/dist-packages/web/wsgi.py", line 59, in runwsgi
+    return httpserver.runsimple(func, server_addr)
+  File "/usr/local/lib/python2.7/dist-packages/web/httpserver.py", line 157, in runsimple
+    server.start()
+  File "/usr/local/lib/python2.7/dist-packages/web/wsgiserver/__init__.py", line 1753, in start
+    raise socket.error(msg)
+socket.error: No socket could be created
+http://0.0.0.0:80/
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    app.run()
+  File "/usr/local/lib/python2.7/dist-packages/web/application.py", line 313, in run
+    return wsgi.runwsgi(self.wsgifunc(*middleware))
+  File "/usr/local/lib/python2.7/dist-packages/web/wsgi.py", line 59, in runwsgi
+    return httpserver.runsimple(func, server_addr)
+  File "/usr/local/lib/python2.7/dist-packages/web/httpserver.py", line 157, in runsimple
+    server.start()
+  File "/usr/local/lib/python2.7/dist-packages/web/wsgiserver/__init__.py", line 1753, in start
+    raise socket.error(msg)
+socket.error: No socket could be created
+127.0.0.1:58546 - - [28/Jun/2017 12:03:33] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58552 - - [28/Jun/2017 12:04:00] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58560 - - [28/Jun/2017 12:04:12] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58568 - - [28/Jun/2017 12:04:17] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58578 - - [28/Jun/2017 12:07:29] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58586 - - [28/Jun/2017 12:07:51] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58596 - - [28/Jun/2017 12:09:25] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58604 - - [28/Jun/2017 12:09:43] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58610 - - [28/Jun/2017 12:09:47] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58620 - - [28/Jun/2017 12:12:01] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58628 - - [28/Jun/2017 12:12:23] "HTTP/1.1 POST /wx" - 200 OK
+http://0.0.0.0:80/
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622611</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[month]]></EventKey>
+</xml>
+True
+ssss
+toUserowLQzv-Ooyc87utlhsFBuaiNudBI
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622640</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[shutdown]]></EventKey>
+</xml>
+True
+系统关机失败，系统已关机
+toUserowLQzv-Ooyc87utlhsFBuaiNudBI
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622651</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+系统开机成功
+系统开机成功
+toUserowLQzv-Ooyc87utlhsFBuaiNudBI
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622657</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[shutdown]]></EventKey>
+</xml>
+True
+系统关机成功
+toUserowLQzv-Ooyc87utlhsFBuaiNudBI
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622847</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622870</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622962</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622982</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[hour]]></EventKey>
+</xml>
+True
+ssss
+toUserowLQzv-Ooyc87utlhsFBuaiNudBI
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498622986</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498623116</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[reboot]]></EventKey>
+</xml>
+True
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498623140</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+Handle Post webdata is  <xml><ToUserName><![CDATA[gh_26f260201337]]></ToUserName>
+<FromUserName><![CDATA[owLQzv-Ooyc87utlhsFBuaiNudBI]]></FromUserName>
+<CreateTime>1498623457</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[boot]]></EventKey>
+</xml>
+True
+in boot
+系统开机成功
+系统开机成�127.0.0.1:58638 - - [28/Jun/2017 12:17:42] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58646 - - [28/Jun/2017 12:18:16] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58654 - - [28/Jun/2017 12:18:20] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58664 - - [28/Jun/2017 12:23:29] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58674 - - [28/Jun/2017 12:30:02] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:58682 - - [28/Jun/2017 12:30:32] "HTTP/1.1 POST /wx" - 200 OK
+http://0.0.0.0:80/
+127.0.0.1:60398 - - [28/Jun/2017 12:34:52] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:60404 - - [28/Jun/2017 12:34:55] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:60412 - - [28/Jun/2017 12:35:21] "HTTP/1.1 POST /wx" - 200 OK
+127.0.0.1:60420 - - [28/Jun/2017 12:35:36] "HTTP/1.1 POST /wx" - 200 OK

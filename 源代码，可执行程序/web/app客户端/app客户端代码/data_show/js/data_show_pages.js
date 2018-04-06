@@ -1,0 +1,4 @@
+var data_show_hour = ['traffic_amount_and_the_amount_of_store_and_into_the_store_rate_hour.html','the_new_and_old_customers_hour.html','deep_rate_and_bounce_rate_hour.html'];
+var data_show_day = ['traffic_amount_and_the_amount_of_store_and_into_the_store_rate_day.html','the_new_and_old_customers_day.html','deep_rate_and_bounce_rate_day.html','the_resident_time_day.html'];
+var data_show_week = ['traffic_amount_and_the_amount_of_store_and_into_the_store_rate_week.html','the_new_and_old_customers_week.html', 'deep_rate_and_bounce_rate_week.html','the_resident_time_week.html','visiting_cycle_week.html', 'customer_active_week.html'];
+var data_show_month = ['traffic_amount_and_the_amount_of_store_and_into_the_store_rate_month.html','the_new_and_old_customers_month.html','deep_rate_and_bounce_rate_month.html','the_resident_time_month.html','visiting_cycle_month.html','customer_active_month.html'];

@@ -1,0 +1,79 @@
+{
+	"size":0,
+	"aggs":{
+		"time":{
+			"date_range":{
+				"field":"@timestamp",
+				"ranges":[
+					{"from":"2017-07-28","to":"2017-07-30"}
+					]
+			},
+			"aggs":{
+				"test":{
+					"nested":{
+						"path":"data"
+					},
+					"aggs":{
+						"count":{
+							"range":{
+								"field":"data.range",
+								"ranges":[
+									{"from":0},
+									{"from":0,"to":30}
+									]	
+							}
+						}
+					}
+				}		
+			}
+		}	
+	}
+}
+
+
+
+
+{
+	"size":0,
+	"aggs":{
+		"range1":{
+			"date_range":{
+				"field":"@timestamp",
+				"ranges":[
+					{"from":"now-10m/m","to":"now/m"}			//筛选出要查询的时间段，精确到分钟，实例表示取最近10分钟的聚合结果
+					]
+			},
+			"aggs":{
+				"range2":{
+					"date_histogram":{
+						"field":"@timestamp",
+						"interval":"minute"				
+					},
+					"aggs":{
+						"what":{
+							"nested":{
+								"path":"data"
+							},
+							"aggs":{
+								"in_store":{
+									"range":{
+										"field":"data.range",
+										"ranges":{"from":0,"to":30}										
+									}				
+							
+								},
+								"all_store":{
+									"range":{
+										"field":"data.range",
+										"ranges":{"from":0}										
+									}				
+						
+								}	
+							}	
+						}
+					}	
+				}
+			}	
+		}
+	}
+}

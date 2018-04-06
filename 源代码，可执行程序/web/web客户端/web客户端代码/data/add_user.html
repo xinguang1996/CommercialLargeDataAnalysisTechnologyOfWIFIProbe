@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+
+    <title>Victors--账号申请 </title>
+
+    <!-- Bootstrap -->
+    <link href="own/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="own/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="own/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="own/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="own/build/css/custom.min.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="img/logo-dark.png" />
+
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>请填写您的信息</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="账号" required="" name="id" id="id"/>
+              </div>
+			  <div>
+                <input type="text" class="form-control" placeholder="负责人姓名" required="" name="name" id="name"/>
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="电子邮箱" required="" name="mail" id="mail"/>
+              </div>
+			  <div>
+			    <input type="text" name="tel" required="" class="form-control" placeholder="电话" id="tel"/>
+			  </div>
+			  <div>
+			    <input type="text" name="wid" required="" class="form-control" placeholder="探针id" id="wid"/>
+			  </div>
+			  <div>
+                <input type="text" class="form-control" placeholder="地址" required="" name="addr" id="addr"/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="密码" required="" name="password" id="password"/>
+              </div>
+			  <div>
+                <input type="password" class="form-control" placeholder="重复密码" required="" data-validate-linked="password" name="repassword" id="repassword"/>
+              </div>
+			  <!--
+			  <div>
+				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="img">上传头像 <span class="required">*</span>
+                </label>
+                <input type="file" class="form-control" placeholder="选择头像" required="" name="img" id="img"/>
+              </div>
+			  -->
+              <div>
+			  <!--
+                <input type="submit" class="btn btn-default" value="确认">
+				-->
+				<button class="btn btn-default" onclick="add_user()">确认</button>
+              </div>
+
+              <div class="clearfix"></div>
+              <div class="separator">
+
+                <p class="change_link">已有账号?
+                  <a href="login.html" class="to_register"> 登录 </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><img src="img/logo-dark-show.png" alt="logo" /> Victors</h1>
+                  <p>&copy;长春工业大学Victors团队</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+
+	<!--my-->
+	<script src="own/vendors/jquery/dist/jquery.min.js"></script>
+	<script src="js/my/project_name.js"></script>
+	<script src="js/my/add_user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+var id;
+var name;
+var mail;
+var tel;
+var wid;
+var addr;
+var password;
+var repassword;
+function add_user() {
+	id = document.getElementById("id").value;
+	name = document.getElementById("name").value;
+	mail = document.getElementById("mail").value;
+	tel = document.getElementById("tel").value;
+	wid = document.getElementById("wid").value;
+	addr = document.getElementById("addr").value;
+	password = document.getElementById("password").value;
+	repassword = document.getElementById("repassword").value;
+	if (id == "" || name == "" || mail == "" || tel == "" || wid == "" || addr == "" || password == "" || repassword == "") {
+		alert("所有字段不能为空！");
+	} else {
+		if (password != repassword) {
+			alert("两次密码不一致！");
+		} else {
+			request_add_user();
+		}
+	}
+}
+//var xmlhttp;
+function request_add_user(){
+	/*
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	var my_url = project_name + "/add_user";
+	var param = "id=123"+ "&name=" + name + "&mail=" + mail + "&tel=" + tel + "&wid=" + wid + "&addr=" + addr + "&password=" + password + "&repassword=" + repassword;
+	xmlhttp.onreadystatechange = add_user_state_change;
+	xmlhttp.open("POST", my_url, true);
+	xmlhttp.send(param);*/
+	var my_url = project_name + "/add_user";
+	var obj = new Object();
+	obj.id = id;
+	obj.name = name;
+	obj.mail = mail;
+	obj.tel = tel;
+	obj.wid = wid;
+	obj.addr = addr;
+	obj.password = password;
+	obj.repassword = repassword;
+	$.ajax({
+		data: obj,
+		url: my_url,
+		type: "POST",
+		success: add_user_callback,
+		error: function(data){
+			alert("请求服务器失败！");
+			alert(data.readyState);
+		}
+	});
+}
+/*
+function add_user_state_change(){
+	if (xmlhttp.readyState==4)
+	{// 4 = "loaded"
+		if (xmlhttp.status==200)
+		{// 200 = "OK"
+			add_user_callback(xmlhttp.responseText);
+		}
+		else
+		{
+			alert(xmlhttp.status);
+			alert(xmlhttp.responseText);
+			alert("Problem retrieving data:" + xmlhttp.statusText);
+		}
+	}
+}*/
+
+function add_user_callback(data) {
+	var index = data.indexOf("ok");
+	if(index == 0){
+		window.location.href = project_name + "/data/index.html";
+	}else{
+		alert(data);
+	}
+}

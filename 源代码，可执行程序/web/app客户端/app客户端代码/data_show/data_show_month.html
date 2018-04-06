@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Victors</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/data_show_pages.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var tabPages = data_show_month;
+			//子页面打开样式
+			var openStyle = {
+				//top: '44px', //顶部距离，留出天
+				bottom: '0px' //底部距离，留出地
+			}
+			//硬件准备完毕
+			mui.plusReady(function() {
+				var currWindow = plus.webview.currentWebview();
+				for(var i = 0; i < tabPages.length; i++) {
+					//创建子页面
+					var subView = plus.webview.create(tabPages[i], //URL
+						tabPages[i], //页面ID，与URL相同，这里也是我们的规范
+						openStyle //打开样式，还有一个参数extras用于传参数
+					);
+					subView.hide(); //先将所有页面隐藏
+					currWindow.append(subView);
+				}
+				plus.webview.show(tabPages[0]); //显示第一个页面
+			});	
+		</script>
+	</body>
+
+</html>

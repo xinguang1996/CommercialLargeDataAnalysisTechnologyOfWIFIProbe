@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Victors--登录 </title>
+
+    <!-- Bootstrap -->
+    <link href="own/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="own/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="own/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="own/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="own/build/css/custom.min.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="img/logo-dark.png" />
+
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>请登录</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="账号" required="" name="id" id="id"/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="密码" required="" name="password" id="password"/>
+              </div>
+              <div>
+                <a class="reset_pass to_register" href="#signup">忘记密码?</a>
+				<a class="btn btn-default submit" href="#" id="login" onclick="login()">登录</a>
+				<!--
+				<input type="submit" class="btn btn-default submit" value="登录">-->
+              </div>
+
+              <div class="clearfix"></div>
+              <div class="separator">
+
+                <p class="change_link">没有账号?
+                  <a href="add_user.html" class="to_register"> 创建用户 </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><img src="img/logo-dark-show.png" alt="logo" /> Victors</h1>
+                  <p>&copy;长春工业大学Victors团队</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>请输入您的信息</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="账号" required="" name="id" id="re_id"/>
+              </div>
+			  <div>
+                <input type="text" class="form-control" placeholder="负责人姓名" required="" name="name" id="re_name"/>
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="电子邮箱" required="" name="mail" id="re_mail"/>
+              </div>
+			  <div>
+			    <input type="text" name="tel" required="" class="form-control" placeholder="电话" id="re_tel"/>
+			  </div>
+			  <div>
+                <input type="text" class="form-control" placeholder="地址" required="" name="addr" id="re_addr"/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="新密码" required="" name="password" id="re_password"/>
+              </div>
+              <div>
+                <input type="submit" class="btn btn-default submit" value="确认" onclick="forget_password()">
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">想起密码 ?
+                  <a href="#signin" class="to_register"> 登录 </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><img src="img/logo-dark-show.png" alt="logo" /> Victors</h1>
+                  <p>&copy;长春工业大学Victors团队</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+
+	<!--my-->
+	<script src="own/vendors/jquery/dist/jquery.min.js"></script>
+	<script src="js/my/project_name.js"></script>
+	<script src="js/my/login.js"></script>
+  </body>
+</html>

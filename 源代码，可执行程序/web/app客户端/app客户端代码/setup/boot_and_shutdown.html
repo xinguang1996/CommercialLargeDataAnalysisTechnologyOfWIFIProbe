@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Victors</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!-- 主界面移动、菜单不动 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+		  <!-- 菜单容器 -->
+		  <aside class="mui-off-canvas-left" id="offCanvasSide">
+		    <div class="mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <!-- 菜单具体展示内容 -->
+		        <ul class="mui-table-view mui-table-view-inverted">
+		            <li class="mui-table-view-cell mui-media">
+		                <a href="javascript:;">
+		                    <img id="my_img" class="mui-media-object mui-pull-left" src="../img/img.jpg" style="height: 40px; width: 40px;">
+		                    <div class="mui-media-body">
+		                    	欢迎您，
+		                        <p class="mui-ellipsis"><span id="my_name">郭欣光</p>
+		                    </div>
+		                </a>
+		            </li>
+		        </ul>
+		        <ul class="mui-table-view mui-table-view-inverted">
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_recent_data">
+	                      	近况展示
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_hour">
+	                       	数据视图（小时）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_day">
+	                       	数据视图（日）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_week">
+	                       	数据视图（周）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_data_show_month">
+	                       	数据视图（月）
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="system_status">
+	                       	系统服务监控
+	                    </a>
+	                </li>
+	                <li class="mui-table-view-cell">
+	                    <a class="mui-navigate-right" id="to_boot_and_shutdown">
+	                       	开关机设置
+	                    </a>
+	                </li>
+	            </ul>
+		      </div>
+		      <nav class="mui-bar mui-bar-tab">
+		      	  <a class="mui-tab-item" id="to_index">
+		              <span class="mui-icon mui-icon-home"></span>
+		              <span class="mui-tab-label">首页</span>
+		          </a>
+		      	  <a class="mui-tab-item" id="reset_info">
+		              <span class="mui-icon mui-icon-gear"></span>
+		              <span class="mui-tab-label">设置</span>
+		         </a>
+		          <a class="mui-tab-item" id="log_out">
+		              <span class="mui-icon mui-icon-redo"></span>
+		              <span class="mui-tab-label">退出</span>
+		          </a>
+		      </nav>
+		    </div>
+		  </aside>
+		  <!-- 主页面容器 -->
+		  <div class="mui-inner-wrap">
+		    <!-- 主页面标题 -->
+		    <header class="mui-bar mui-bar-nav">
+		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>
+		      <h1 class="mui-title">开关机设置</h1>
+		      <a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>
+		    </header>
+		    <div class="mui-content mui-scroll-wrapper">
+		      <div class="mui-scroll">
+		        <!-- 主界面具体展示内容 -->
+		        <center>
+		        	<button type="button" class="mui-btn mui-btn-green" style="height: 40px; width: 30%;" id="boot">开机</button>
+		        	<button type="button" class="mui-btn mui-btn-red" style="height: 40px; width: 30%;" id="shutdown">关机</button>
+		        	<button type="button" class="mui-btn mui-btn-yellow" style="height: 40px; width: 30%;" id="reboot">重新启动</button>
+		        </center>
+		        <form class="mui-input-group">
+		        	<div class="mui-input-row">
+		        	    <label>自动开机</label>
+		        	    <div class="mui-switch mui-active" id="boot_time">
+		        	        <div class="mui-switch-handle"></div>
+		        	    </div>
+		        	</div>
+		            <div class="mui-input-row" id="boot_time_show">
+		                <label>开机时间</label>
+		                <input id="pickTimeBtn_boot" type="text" placeholder="开机时间" readonly="readonly">
+		                <!--<button id="pickTimeBtn" class="mui-btn" type="button">选择</button>-->
+		            </div>
+		            <div class="mui-input-row">
+		        	    <label>自动关机</label>
+		        	    <div class="mui-switch mui-active" id="shutdown_time">
+		        	        <div class="mui-switch-handle"></div>
+		        	    </div>
+		        	</div>
+		            <div class="mui-input-row" id="shutdown_tiem_show">
+		                <label>关机时间</label>
+		                <input id="pickTimeBtn_shutdown" type="text" placeholder="关机时间" readonly="readonly">
+		                <!--<button id="pickTimeBtn" class="mui-btn" type="button">选择</button>-->
+		            </div>
+		            <button type="button" class="mui-btn mui-btn-green mui-btn-block" id="set_ok">确认设置</button>
+		        </form>
+		      </div>
+		    </div> 
+		    <div class="mui-off-canvas-backdrop"></div>
+		  </div> 
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/my_ip.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			//获取开关机时间
+			mui.ajax(my_ip + "/get_boot_and_shutdown_time", {
+				type: "get",
+				//dataType: "json",
+				timeout: 8000,
+				success: function(data){
+					var obj = JSON.parse(data);
+					var boot_time = obj["boot"];
+					var shutdown_time = obj["shutdown"];
+					if(boot_time == "" || boot_time == null){
+						boot_time = "----";
+						var auto_boot = document.getElementById("boot_time");
+						var auto_boot_class = auto_boot.className;
+						auto_boot_class.replace("mui-active", "");
+						auto_boot.className = auto_boot_class;
+					}
+					if(shutdown_time == "" || shutdown_time == null){
+						shutdown_time = "----";
+						var auto_shutdown = document.getElementById("shutdown_time");
+						var auto_shutdown_class = auto_shutdown.className;
+						auto_shutdown_class.replace("mui-active", "");
+						auto_shutdown.className = auto_shutdown_class;
+					}
+					document.getElementById("pickTimeBtn_boot").value = boot_time;
+					document.getElementById("pickTimeBtn_shutdown").value = shutdown_time;
+				},
+				error: function(xhr, type, errorThrown){
+					mui.toast("无法获取服务器信息！");
+				}
+			});
+			document.getElementById("pickTimeBtn_boot").addEventListener('tap', function(){
+				var pickTimeBtn_boot = document.getElementById("pickTimeBtn_boot");
+				var dTime = new Date();
+				//设置默认时间
+				dTime.setHours(6, 0);
+				plus.nativeUI.pickTime(function(e){
+					var d = e.date;
+					var s = "";
+					if(d.getHours() <10)
+					{
+						s = '0' + d.getHours();
+					}else{
+						s = "" + d.getHours();
+					}
+					s += ":";
+					if(d.getMinutes() < 10){
+						s += "0";
+						s += d.getMinutes();
+					}else{
+						s += d.getMinutes();
+					}
+					pickTimeBtn_boot.value = s;
+					mui.toast("您选择的时间是：" + d.getHours() + ":" + d.getMinutes());
+				}, function(e){
+					mui.toast("您没有选择时间");
+				}, {
+					title: "请选择时间",
+					is24Hour: true,
+					time: dTime
+				});
+			});
+			
+			document.getElementById("pickTimeBtn_shutdown").addEventListener('tap', function(){
+				var pickTimeBtn_shutdown = document.getElementById("pickTimeBtn_shutdown");
+				var dTime = new Date();
+				//设置默认时间
+				dTime.setHours(6, 0);
+				plus.nativeUI.pickTime(function(e){
+					var d = e.date;
+					var s = "";
+					if(d.getHours() <10)
+					{
+						s = '0' + d.getHours();
+					}else{
+						s = "" + d.getHours();
+					}
+					s += ":";
+					if(d.getMinutes() < 10){
+						s += "0";
+						s += d.getMinutes();
+					}else{
+						s += d.getMinutes();
+					}
+					pickTimeBtn_shutdown.value = s;
+					mui.toast("您选择的时间是：" + d.getHours() + ":" + d.getMinutes());
+				}, function(e){
+					mui.toast("您没有选择时间");
+				}, {
+					title: "请选择时间",
+					is24Hour: true,
+					time: dTime
+				});
+			});
+			//监听是否打开自动开机
+			var boot_time = document.getElementById("boot_time");
+			boot_time.addEventListener("tap", function(){
+				var boot_time_class = boot_time.className;
+				//boot_time_class = boot_time_class.toString();
+				if(boot_time_class.indexOf("mui-active") != -1){
+					mui.toast("您开启了自动开机！");
+					var pickTimeBtn_boot = document.getElementById("pickTimeBtn_boot");
+					pickTimeBtn_boot.value = "00:00";
+				}else{
+					mui.toast("您关闭了自动开机！");
+					var pickTimeBtn_boot = document.getElementById("pickTimeBtn_boot");
+					pickTimeBtn_boot.value = "----";
+				}
+			});
+			//监听是否打开自动关机
+			var shutdown_time = document.getElementById("shutdown_time");
+			shutdown_time.addEventListener("tap", function(){
+				var shutdown_time_class = shutdown_time.className;
+				if(shutdown_time_class.indexOf("mui-active") != -1)
+				{
+					mui.toast("您开启了自动关机！");
+					var pickTimeBtn_shutdown = document.getElementById("pickTimeBtn_shutdown");
+					pickTimeBtn_shutdown.value = "00:00";
+				}else{
+					mui.toast("您关闭了自动关机！");
+					var pickTimeBtn_shutdown = document.getElementById("pickTimeBtn_shutdown");
+					pickTimeBtn_shutdown.value = "----";
+				}
+			});
+			//监听确认设置按钮
+			document.getElementById("set_ok").addEventListener("click", function(){
+				var boot_time = document.getElementById("pickTimeBtn_boot").value;
+				var shutdown_time = document.getElementById("pickTimeBtn_shutdown").value;
+				var automatic = new Object();
+				if(boot_time == "----")
+				{
+    				automatic.boot = null;
+				}
+				else
+				{
+    				automatic.boot = boot_time;
+				}
+				if(shutdown_time == "----")
+				{
+    				automatic.shutdown = null;
+				}
+				else
+				{
+    				automatic.shutdown = shutdown_time;
+				}
+				mui.ajax(my_ip + "/set_boot_and_shutdown_time", {
+					data: automatic,
+					//dataType: "json",
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("ok");
+						if(index == 0){
+							mui.toast("设置成功！");
+						}else{
+							mui.toast("设置失败！");
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						mui.toast("发送请求失败！");
+					}
+				});
+			});
+			//监听开机按钮
+			document.getElementById("boot").addEventListener("click", function(){
+				var obj = new Object();
+				obj.signal = "boot";
+				mui.ajax(my_ip + "/boot_reboot_shutdown", {
+					data: obj,
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("yes");
+						if(index == 0){
+							mui.toast("开机成功！");
+						}else{
+							var test = data.indexOf("no");
+							if(test == 0){
+								mui.toast("开机失败！ 机器已开机！");
+							}else{
+								mui.toast("开机失败！连接控制设备出错！");
+							}
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						mui.toast("发送开机请求失败！");
+					}
+				});
+			});
+			//监听关机按钮
+			document.getElementById("shutdown").addEventListener("click", function(){
+				var obj = new Object();
+				obj.signal = "shutdown";
+				mui.ajax(my_ip + "/boot_reboot_shutdown", {
+					data: obj,
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("yes");
+						if(index == 0){
+							mui.toast("关机成功！");
+						}else{
+							var test = data.indexOf("no");
+							if(test == 0){
+								mui.toast("关机失败！ 机器已关机！");
+							}else{
+								mui.toast("关机失败！连接控制设备出错！");
+							}
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						mui.toast("发送关机请求失败！");
+					}
+				});
+			});
+			//监听重启按钮
+			document.getElementById("reboot").addEventListener("click", function(){
+				var obj = new Object();
+				obj.signal = "reboot";
+				mui.ajax(my_ip + "/boot_reboot_shutdown", {
+					data: obj,
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("yes");
+						if(index == 0){
+							mui.toast("重启成功！");
+						}else{
+							var test = data.indexOf("no");
+							if(test == 0){
+								mui.toast("重启失败！ 机器已关机！");
+							}else{
+								mui.toast("重启失败！连接控制设备出错！");
+							}
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						mui.toast("发送重启请求失败！");
+					}
+				});
+			});
+			//监听首页按钮
+			document.getElementById("to_index").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../index.html',
+					id: 'index.html'
+				});
+			});
+			//获取登陆者信息
+			mui.ajax(my_ip + "/get_user", {
+				type: "get",
+				timeout: 8000,
+				success: function(data){
+					var temp = data.indexOf("error");
+					if(temp != -1){
+						mui.openWindow({
+							url: '../login/login.html',
+							id: 'login.html'
+						});
+					}else{
+						var obj = JSON.parse(data);
+						var name = obj["name"];
+						//var img = obj["img"];
+						document.getElementById("my_name").innerHTML = name;
+						//document.getElementById("my_img").src = img;
+					}
+				},
+				error: function(xhr, type, errorThrown){
+					mui.toast("网络错误！");
+					/*
+					mui.openWindow({
+						url: '../login/login.html',
+						id: 'login.html'
+					});*/
+				}
+			});
+			//监听近况展示按钮
+			document.getElementById("to_recent_data").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../main/recent_data.html',
+					id: 'recent_data.html'
+				});
+			});
+			//监听数据展示（小时）按钮
+			document.getElementById("to_data_show_hour").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../data_show/data_show_hour.html',
+					id: 'data_show_hour.html'
+				});
+			});
+			//监听数据展示（日）按钮
+			document.getElementById("to_data_show_day").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../data_show/data_show_day.html',
+					id: 'data_show_day.html'
+				});
+			});
+			//监听数据展示（周）按钮
+			document.getElementById("to_data_show_week").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../data_show/data_show_week.html',
+					id: 'data_show_week.html'
+				});
+			});
+			//监听数据展示（月）按钮
+			document.getElementById("to_data_show_month").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../data_show/data_show_month.html',
+					id: 'data_show_month.html'
+				});
+			});
+			//监听开关机设置按钮
+			document.getElementById("to_boot_and_shutdown").addEventListener("tap", function(){
+				mui.openWindow({
+					url: 'boot_and_shutdown.html',
+					id: 'boot_and_shutdown.html'
+				});
+			});
+			//监听退出按钮
+			document.getElementById("log_out").addEventListener("tap", function(){
+				mui.ajax(my_ip + "/log_out", {
+					type: "get",
+					timeout: 8000,
+					success: function(data){
+						var index = data.indexOf("ok");
+						if(index == 0){
+							mui.toast("退出成功！");
+							mui.openWindow({
+								url: '../index.html',
+								id: 'index.html'
+							});
+						}else{
+							alert(data);
+						}
+					},
+					error: function(xhr, type, errorThrown){
+						alert("网络错误！");
+					}
+				});
+			});
+			//监听设置按钮
+			document.getElementById("reset_info").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../reset_info/reset_info_main.html',
+					id: 'reset_info_main.html'
+				});
+			});
+			//监听系统服务按钮
+			document.getElementById("system_status").addEventListener("tap", function(){
+				mui.openWindow({
+					url: '../system_status/system_status.html',
+					id: 'system_status.html'
+				});
+			});
+		</script>
+	</body>
+
+</html>

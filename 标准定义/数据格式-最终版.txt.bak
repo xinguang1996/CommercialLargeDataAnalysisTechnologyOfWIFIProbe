@@ -1,0 +1,81 @@
+结果数据格式：
+
+	索引：res
+	_type：用户id-hour（时维度），用户id-day（天维度），用户id-week（周维度），用户id-month（月维度）
+	_id：年-月-日-时
+	json格式（_source字段）：
+		json格式：
+		{
+			"Traffic amount":,				//客流量，单位：人
+			"The amount of store":,				//入店量，单位：人
+			"Into the store rate":,				//入店率
+			"The new and old customers": {			//新老顾客（人数或比率）
+				"new": ,
+				"old": 
+			},
+			"Deep rate":,					//深访率
+			"Bounce rate":,					//跳出率
+			"Visiting cycle":[[],[]],			//来访周期，第一个列表为访问间隔，第二个列表为人数，下标相互对应
+			"Customer active": {				//顾客活跃度
+				"High activity":,
+				"Mid activity": ,
+				"Sleep activity":,
+				"Low activity": 
+			},
+			"The resident time":[[],[]],			//驻店时长，同上
+			"Average visiting cycle":,			//平均来访周期
+			"Average the resident time":			//平均驻店时长
+		}
+		注：1.所有值皆为字符串
+		    2.结果数据存储的格式和原来的差不多，无时间维度的数据根据取值范围确定，并存放在特定的文档中
+		    3.和原来一样，来访周期，顾客活跃度在时，日维度仍会计算，但前端展示时应该只取周和月维度。
+		    4.查询实例：假如查询用户0001在2017年8月12日（天维度）的数据，当时为：GET http://192.168.1.10:9200/res/0001-day/2017-08-13-00
+
+
+源数据格式：
+	
+	索引：sou
+	_type：tz_1		//探针_id
+	_id：时间		//对于源数据来说没用
+	json格式（_source字段）：
+		标准探针数据json
+
+
+通过es-hadoop API得到的源数据格式
+	[('_id',{标准探针数据json}),('_id',{标准探针数据json}),.........]
+	示例数据见源数据格式
+
+user_table数据格式：
+	索引：user_table
+	_type：用户ID，
+	_id: 用户ID
+	json格式(_source字段)
+		{
+			"wid": "1",		//探针ID
+			"tel": "123456789",
+			"addr": "ccut_1",
+			"img": "http://avatar.csdn.ne/D/6//1_cnweike.jpg",
+			"mail": "123456@qq.com",
+			"password": "e10adc3949ba59abbe56e057f20f883e",
+			"id": "0001",		//用户ID
+			"name": "user1"
+		}
+
+通过es-hadoop API得到的user_table格式
+	使用es-hadoop读取时es.resource:"user_table",es.query:不写
+	[('_id',{用户表json}),('_id',{用户表json}),.........]
+	数据示例
+	[(u'0001', {u'wid': u'1', u'tel': u'123456789', u'name': u'user1', u'img': u'http://avatar.csdn.ne/D/6//1_cnweike.jpg', u'mail': u'123456@qq.com', u'password': u'e10adc3949ba59abbe56e057f20f883e', u'id': u'0001', u'addr': u'ccut_1'})]
+
+实时展示聚合
+	聚合表达式：
+		url:http://192.168.1.10:9200/sou/tz_1/_search
+		消息体：见前两项聚合
+		方式：POST
+		注意：以上的tz_1中的1表示的是探针ID，实时展示是根据用户列表查询得到
+	聚合结果json：
+		见前两项聚合
+
+
+计算的整体流程：
+	获取user_table->获取需要计算的用户ID及其对应的探针ID->根据探针ID在sou中搜索数据->计算该用户->存储该用户ID的数据

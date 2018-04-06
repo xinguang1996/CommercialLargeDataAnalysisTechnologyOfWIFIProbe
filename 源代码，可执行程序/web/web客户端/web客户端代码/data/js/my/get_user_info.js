@@ -1,0 +1,57 @@
+var my_id = "";
+var my_name = "";
+var my_mail = "";
+var my_tel = "";
+var my_wid = "";
+var my_addr = "";
+$(document).ready(function(){
+	//获取登陆者信息
+	var my_url = project_name + "/get_user";
+	$.ajax({
+		type: "GET",
+		url: my_url,
+		success: get_user_info_callback
+	});
+});
+
+function get_user_info_callback(data){
+	var temp = data.indexOf("error");
+	if(temp != -1){
+		window.location.href = project_name + "/data/login.html";
+	}else{
+		var obj = JSON.parse(data);
+		var name = obj["name"];
+		my_name = name;
+		my_id = obj["id"];
+		my_mail = obj["mail"];
+		my_tel = obj["tel"];
+		my_wid = obj["wid"];
+		my_addr = obj["addr"];
+		document.getElementById("my_name").innerHTML = name;
+		document.getElementById("my_name2").innerHTML = name;
+	}
+}
+
+function log_out(){
+	request_log_out();
+}
+function request_log_out(){
+	var my_url = project_name + "/log_out";
+	$.ajax({
+		type: "GET",
+		url: my_url,
+		success: log_out_callback,
+		error: function(data){
+			alert("请求出错！");
+		}
+	});
+}
+
+function log_out_callback(data){
+	var temp = data.indexOf("ok");
+	if(temp == 0){
+		window.location.href = project_name + "/data/login.html";
+	}else{
+		alert("服务器出错！");
+	}
+}

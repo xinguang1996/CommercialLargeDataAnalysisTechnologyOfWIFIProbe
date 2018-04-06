@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/modify.css" rel="stylesheet" />
+	</head>
+
+	<body style="background-color: #fff;">
+		
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">车辆情况</h1>
+		</header>
+		
+		<!--科目选择结束-->
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/user_info.js"></script>
+		<script src="../js/constants_value.js"></script>
+		<script src="../js/bigdata_page_arr.js"></script>
+		<script>
+			mui.init();
+			//新建子页面，并建立子页面数组
+			var tabPages = car_pages;
+			//子页面打开样式
+			var openStyle = {
+				top: '44px', //顶部距离，留出天
+				bottom: '0px' //底部距离，留出地
+			}
+			//硬件准备完毕
+			mui.plusReady(function() {
+				var currWindow = plus.webview.currentWebview();
+				for(var i = 0; i < tabPages.length; i++) {
+					//创建子页面
+					var subView = plus.webview.create(tabPages[i], //URL
+						tabPages[i], //页面ID，与URL相同，这里也是我们的规范
+						openStyle //打开样式，还有一个参数extras用于传参数
+					);
+					subView.hide(); //先将所有页面隐藏
+					currWindow.append(subView);
+				}
+				plus.webview.show(tabPages[0]); //显示第一个页面
+			})
+			
+		</script>
+
+	</body>
+
+</html>
