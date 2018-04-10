@@ -44,13 +44,13 @@
 
 - 项目全称：基于WIFI探针的商业大数据分析技术---"Victors'WIFI"
 - 项目人员：汤佳辉、郭欣光、赵鹏越
-- 程序目录：Victors-source/probe
+- 程序目录：源代码，可执行程序/WIFI探针
 - 开发语言：Python
 - 开发工具：Vim7.3
 
 ### 自制WIFI探针程序目录相关说明
 
-程序目录中 github-images-folder文件夹与自制WIFI探针程序无关，里面的图片为Github项目README页面的说明。
+程序目录中 图片 文件夹与自制WIFI探针程序无关，里面的图片为Github项目README页面的说明。
 
 ### 自制WIFI探针主要元件说明
 
@@ -86,13 +86,13 @@
 
 - 项目全称：基于WIFI探针的商业大数据分析技术---"Victors'WIFI"
 - 开发人员：汤佳辉、郭欣光、赵鹏越
-- 程序目录：Victors-source/sms
+- 程序目录：源代码，可执行程序/sms服务
 - 开发语言：Python，Arduino
 - 开发工具：Vim 7.3 Arduino 1.6.9
 
 ### 短信服务程序目录相关说明
 
-程序目录中github-images-florder文件夹与短信服务端程序无关，里面的图片为Github项目README页面的说明。
+程序目录中 图片 文件夹与短信服务端程序无关，里面的图片为Github项目README页面的说明。
 
 ### 短信服务程序功能相关说明
 
@@ -114,13 +114,13 @@
 
 - 项目全称：基于WIFI探针的商业大数据分析技术---“Victors'WIFI”
 - 开发人员：汤佳辉、郭欣光、赵鹏越
-- 程序目录：Victors-source/wechat
+- 程序目录：源代码，可执行程序/微信服务
 - 开发语言：Python
 - 开发工具：Vim 7.3
 
 ### 微信服务程序目录相关说明
 
-程序目录中github-images-floder文件夹与微信服务端程序无关，里面的图片为Github项目README页面的说明。
+程序目录中 图片 文件夹与微信服务端程序无关，里面的图片为Github项目README页面的说明。
 
 ### 微信服务程序功能相关说明
 
@@ -145,13 +145,13 @@
 
 - 项目全称：基于WIFI探针的商业大数据分析技术---"Victors'WIFI"
 - 开发人员：汤佳辉、郭欣光、赵鹏越
-- 程序目录：Victors-source/app
+- 程序目录：源代码，可执行程序/web/app客户端/app客户端代码
 - 开发语言：html5、javascript、css
 - 开发工具：HBuilder 8.0.1
 
 ### 移动APP程序目录相关说明
 
-程序目录中github-images-floder文件夹与移动APP客户端程序无关，里面的图片为Github项目README页面的说明。
+程序目录中 图片 文件夹与移动APP客户端程序无关，里面的图片为Github项目README页面的说明。
 
 ### 移动APP程序功能相关说明
 
@@ -169,13 +169,14 @@
 
 - 项目全称：基于WIFI探针的商业大数据分析技术---"Victors'WIFI"
 - 开发人员：汤佳辉、郭欣光、赵鹏越
-- 程序目录：Victors-source/web
+- 服务器端程序目录：源代码，可执行程序/web/web服务器/web服务器代码/src
+- 客户端程序目录：源代码，可执行程序/web/web客户端/web客户端代码
 - 开发语言：Java、Html、css、Javascript
 - 开发工具：Maven、IntelliJ IDEA 2016.1.3
 
 ### web服务程序目录相关说明
 
-程序目录中github-images-folder文件夹与web服务端程序无关，里面的图片为Github项目README页面的说明
+程序目录中 图片 文件夹与web服务端程序无关，里面的图片为Github项目README页面的说明
 
 ### web服务程序功能相关说明
 
@@ -224,7 +225,7 @@
 
 ## 项目视频演示
 
-- git目录：Victors-readme/视频/Victors.wmv
+- git目录：视频/最终视频.mp4
 - 爱奇艺在线连接：[http://www.iqiyi.com/w_19rtorga7x.html](http://www.iqiyi.com/w_19rtorga7x.html)
 - 温馨提示：在线观看时请尽量选择1080p观看高清版哦！
 
