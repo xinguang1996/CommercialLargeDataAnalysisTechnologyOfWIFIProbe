@@ -226,7 +226,7 @@
 ## 项目视频演示
 
 - git目录：视频/最终视频.mp4
-- 爱奇艺在线连接：[http://www.iqiyi.com/w_19rtorga7x.html](http://www.iqiyi.com/w_19rtorga7x.html)
+- 爱奇艺在线连接：[http://www.iqiyi.com/w_19rtorga7x.html](http://www.iqiyi.com/w_19rtorga7x.html) （该视频链接为初始版本链接，最新版本与初始版本有较大变化，最新版视频没有上传，请参见目录 视频/最终视频.mp4 ）
 - 温馨提示：在线观看时请尽量选择1080p观看高清版哦！
 
 ## 关于我们
